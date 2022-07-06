@@ -1,0 +1,23 @@
+
+
+[
+    {
+        "descreption": "نام",
+        "name": "name",
+        "id": "name",
+        "type": "text"
+    },
+    {
+        "descreption": "ایمیل",
+        "name": "email",
+        "id": "email-address",
+        "type": "email"
+    },
+    {
+        "descreption": "رمز عبور",
+        "name": "password",
+        "id": "password",
+        "type": "password"
+    }
+]
+
