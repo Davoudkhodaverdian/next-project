@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const authenticateSlice = createSlice({
     name: 'authenticate',
     initialState: {
-        authenticate: true
+        authenticate: false
     },
     reducers: {
 

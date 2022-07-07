@@ -2,22 +2,13 @@
 // import styles from '../styles/Home.module.css'
 // import Link from 'next/link'
 import Main from './../components/main/main'
-import { store } from './../store/store';
-import { Provider } from 'react-redux';
-const Home = () => {
-  return (
-    <Provider store={store}>
 
-      <div dir='rtl'>
-        <Main />
-      </div>
-    </Provider>
-  )
+const Home = () => {
+  return <Main />
+  
 }
 
-
 // const Home = ({ posts }) => {
-
 
 //   posts = posts ? posts : [];
 
@@ -41,7 +32,7 @@ const Home = () => {
 //               <div>{item.title}</div>
 //               <div>{item.body}</div>
 //               <Link href='/article/[title]/[pid]' as={`/article/${item.title}/${item.id}`}>
-//                 <button>
+//                 <button className='px-3 mx-2 rounded text-white text-center bg-gray-500 font-bold drop-shadow hover:bg-gray-600 active:bg-gray-700 focus:ring focus:ring-gray-300'>
 //                   <a>page article with this data</a>
 //                 </button>
 //               </Link>

@@ -1,5 +1,5 @@
 
-import { Link } from 'react-router-dom';
+import  Link  from 'next/link';
 import { setAuthenticate } from "../../store/slices/authenticateSlice"
 import { useDispatch } from 'react-redux'
 import { useState } from 'react';
@@ -47,16 +47,20 @@ function Register() {
                         ))
                     }
                     <div className="mx-1 my-4">
-                        <Link to="/">
-                            <input type="submit" name="submit" value="بازگشت" className="px-3 rounded text-white text-center bg-red-500 font-bold drop-shadow hover:bg-red-600 active:bg-red-700 focus:ring focus:ring-red-300 mx-1" />
+                        <Link href="/">
+                            <a>
+                                <input type="submit" name="submit" value="بازگشت" className="px-3 rounded text-white text-center bg-red-500 font-bold drop-shadow hover:bg-red-600 active:bg-red-700 focus:ring focus:ring-red-300 mx-1" />
+                            </a>
                         </Link>
-                        <Link to="/">
-                            <input onClick={registerHandler}
-                                type="submit" name="submit" value="ثبت نام" className="px-3 rounded text-white text-center bg-violet-500 font-bold drop-shadow hover:bg-violet-600 active:bg-violet-700 focus:ring focus:ring-violet-300  mx-1" />
+                        <Link href="/">
+                            <a>
+                                <input onClick={registerHandler}
+                                    type="submit" name="submit" value="ثبت نام" className="px-3 rounded text-white text-center bg-violet-500 font-bold drop-shadow hover:bg-violet-600 active:bg-violet-700 focus:ring focus:ring-violet-300  mx-1" />
+                            </a>
                         </Link>
                     </div>
                 </form>
-                <Link to="/login"><div>قبلا ثبت نام کرده اید</div></Link>
+                <Link href="/login"><a><div>قبلا ثبت نام کرده اید</div></a></Link>
             </div>
 
         </div>
