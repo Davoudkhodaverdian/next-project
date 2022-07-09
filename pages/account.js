@@ -1,6 +1,6 @@
 import Account from "../components/account/page";
 
-export default function About() {
+export default function AccountPage() {
 
     return (
         <Account/>

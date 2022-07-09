@@ -1,19 +1,26 @@
-
-
 [
     {
         "descreption": "صفحه اصلی",
         "name": "main-page",
-        "id": 3
+        "id": 1,
+        "root": "/"
     },
     {
         "descreption": "صفحه عادی",
         "name": "no-subject",
-        "id": 3
+        "id": 2,
+        "root": "/dashboard"
     },
     {
         "descreption": "شمارنده",
         "name": "counter",
-        "id": 3
+        "id": 3,
+        "root": "/dashboard/counter"
+    },
+    {
+        "descreption": "پنل مدیریت",
+        "name": "management-panel",
+        "id": 4,
+        "root": "/management-panel"
     }
 ]

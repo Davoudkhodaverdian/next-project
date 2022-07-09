@@ -5,16 +5,12 @@ import MenubarItems from './menubarItems';
 
 function Menubar({ sidebar, sendSidebarState }) {
 
-    const hideSidebar = () => {
-        sendSidebarState(false);
+    const hideSidebar = () => { sendSidebarState(false) }
 
-    }
-    
     return (
-
         <>
-            <div className={`w-full bg-gray-500/30 ${sidebar ? "" : "hidden"} transition-all absolute sm:hidden overflow-auto h-screen inset-0`} onClick={hideSidebar}></div>
-            <nav className={`bg-indigo-500 text-white w-64 p-2  top-0 right-[-256px] overflow-auto h-screen ${sidebar ? "right-0" : ""} sm:hidden transition-all fixed`}>
+            <div className={`w-full bg-gray-500/30 ${sidebar ? "" : "hidden"} transition-all absolute md:hidden overflow-auto h-screen inset-0`} onClick={hideSidebar}></div>
+            <nav className={`bg-indigo-500 text-white w-64 p-2  top-0 right-[-256px] overflow-auto h-screen ${sidebar ? "right-0" : ""} md:hidden transition-all fixed`}>
                 <div className="p-4" >
                     <button onClick={hideSidebar}>
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 m-2" viewBox="0 0 20 20" fill="currentColor">
@@ -23,7 +19,7 @@ function Menubar({ sidebar, sendSidebarState }) {
                     </button>
                     <img className="h-8 w-auto" src="/images/workflow.svg" alt="Workflow" />
                 </div>
-                <MenubarItems sendSidebarState={sendSidebarState}/>
+                <MenubarItems sendSidebarState={sendSidebarState} />
             </nav>
 
         </>

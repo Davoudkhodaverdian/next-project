@@ -2,7 +2,7 @@ import Dashboard from "../../components/dashboard/dashboard";
 import { useSelector } from 'react-redux';
 //import Home from ".";
 
-export default function LoginPage() {
+export default function DashboardPage() {
 
     const authenticate = useSelector((state) => state.authenticate.authenticate);
 

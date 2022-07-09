@@ -2,8 +2,6 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import AccountItems from '../../account/items';
-import { setAuthenticate } from "../../../store/slices/authenticateSlice"
-import { useDispatch } from 'react-redux'
 import Link from 'next/link'
 
 function Navbar() {
@@ -14,11 +12,7 @@ function Navbar() {
 
     const authenticate = useSelector((state) => state.authenticate.authenticate);
 
-    const dispatch = useDispatch()
-    const authenticateHandler = () => {
-        dispatch(setAuthenticate(false))
-    }
-
+ 
     return (
         <nav className=' p-3 bg-gray-100'>
             <div className='flex flex-wrap justify-between items-center container mx-auto'>

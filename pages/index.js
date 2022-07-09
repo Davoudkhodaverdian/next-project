@@ -10,7 +10,7 @@ const Home = () => {
 
 // const Home = ({ posts }) => {
 
-//   posts = posts ? posts : [];
+//   posts = posts ? posts.data : [];
 
 //   return (
 //     <div className={styles.container}>
@@ -47,7 +47,7 @@ const Home = () => {
 
 // export async function getServerSideProps() {
 //   // Fetch data from external API
-//   const res = await fetch(`https://jsonplaceholder.typicode.com/posts`)
+//   const res = await fetch(`https://62891163abc3b5e327cc086b.endapi.io/users`)
 //   const posts = await res.json()
 
 //   // Pass data to the page via props

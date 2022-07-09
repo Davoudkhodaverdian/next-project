@@ -16,7 +16,7 @@ function Dashbord({children}) {
             <div className="flex flex-col w-full">
                 <Header sendSidebarState={sendSidebarState} sidebar={sidebar} />
                 <div className="w-full max-w-7xl mx-auto p-3">
-                    {children ? children : <h1>no sunject</h1>}
+                    {children ? children : <h1>no subject</h1>}
                 </div>
             </div>
             <MenubarDynamic sidebar={sidebar} sendSidebarState={sendSidebarState} />
