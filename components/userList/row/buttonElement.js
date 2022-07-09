@@ -1,28 +1,35 @@
-// import axios from "axios";
+
 import { removeUser, editUser } from '../../../store/slices/userListSlice';
 import { useDispatch } from 'react-redux';
 
-function ButtonElement({ edit, state, UserData ,setState}) {
+function ButtonElement({ edit, state, UserData, setState }) {
 
     const dispatch = useDispatch();
 
     const EditChangeMethod = async (id) => {
 
-        // let dataChanged = {
-        //     name: state.editedName, email: state.editedEmail, role: state.editedRole, password: Date.now().toString(),
-        //     membershipDate: (Number(state.editedYear) + "/" + Number(state.editedMonth) + "/" + Number(state.editedDay)),
-        //     title: state.editedTitle, field: state.editedField, age: state.editedAge, workExperience: state.editedWorkExperience,
-        // }
+        let dataChanged = {
+            name: state.editedName, email: state.editedEmail, role: state.editedRole, password: Date.now().toString(),
+            membershipDate: (Number(state.editedYear) + "/" + Number(state.editedMonth) + "/" + Number(state.editedDay)),
+            title: state.editedTitle, field: state.editedField, age: state.editedAge, workExperience: state.editedWorkExperience,
+        }
 
-        // try {
-        //     let response = await axios.put(`https://62891163abc3b5e327cc086b.endapi.io/users/${id}`, dataChanged);
-            
-        //     dispatch(editUser( {id, dataChanged} ))
+        try {
+        
+            const res = await fetch(`https://62891163abc3b5e327cc086b.endapi.io/users/${id}`, {
+                method: "PUT",
+                body: JSON.stringify(dataChanged),
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'charset': 'utf-8 ' 
+                }
+            })
+            dispatch(editUser( {id, dataChanged} ))
 
-        // } catch (error) {
-        //     console.log(error)
+        } catch (error) {
+            console.log(error)
 
-        // }
+        }
 
         dispatch(editUser({ ...dataChanged }, id))
         setState(prevState => ({ ...prevState, edit: false }))
@@ -33,13 +40,16 @@ function ButtonElement({ edit, state, UserData ,setState}) {
 
     const removeUserHandler = async (id) => {
 
-        // try {
-        //     let response = await axios.delete(`https://62891163abc3b5e327cc086b.endapi.io/users/${id}`);
-        //     dispatch(removeUser(id));
-        // } catch (error) {
-        //     console.log(error)
-        // }
-
+        try {
+            const res = await fetch(`https://62891163abc3b5e327cc086b.endapi.io/users/${id}`, {
+                method: "DELETE",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'charset': 'utf-8 '
+                }
+            })
+            dispatch(removeUser(id));
+        } catch (error) { console.log(error) }
     }
 
 

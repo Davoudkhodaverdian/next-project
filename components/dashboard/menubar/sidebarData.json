@@ -22,5 +22,11 @@
         "name": "management-panel",
         "id": 4,
         "root": "/management-panel"
+    },
+    {
+        "descreption": "مقالات",
+        "name": "article",
+        "id": 4,
+        "root": "/dashboard/counter/article"
     }
 ]

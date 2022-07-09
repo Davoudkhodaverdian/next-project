@@ -3,16 +3,12 @@ import ManagementPanel from "../components/managementPanel/managementPanel";
 import { useDispatch } from 'react-redux';
 import { setUser } from "../store/slices/userListSlice";
 
-
-
 export default function ManagementPanelPage({ users }) {
 
     const dispatch = useDispatch();
     dispatch(setUser(users.data))
     
-    return (
-        <ManagementPanel users={users} />
-    )
+    return (<ManagementPanel users={users} />)
 }
 
 // This gets called on every request

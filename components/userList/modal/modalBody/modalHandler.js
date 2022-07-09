@@ -1,5 +1,4 @@
 import { addUser } from '../../../../store/slices/userListSlice';
-// import axios from "axios";
 import { useDispatch } from 'react-redux';
 
 function ModalHandler({ closeModal, state, setState }) {
