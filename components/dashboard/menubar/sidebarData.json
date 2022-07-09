@@ -27,6 +27,6 @@
         "descreption": "مقالات",
         "name": "article",
         "id": 4,
-        "root": "/dashboard/counter/article"
+        "root": "/dashboard/article"
     }
 ]
