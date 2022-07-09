@@ -8,21 +8,26 @@ function ModalHandler({ closeModal, state, setState }) {
 
     const addUserHandler = async (values) => {
 
-        // try {
+        try {
 
-        //     const res = await fetch(`https://62891163abc3b5e327cc086b.endapi.io/users`, {
-        //         method: "POST",
-        //         body: JSON.stringify({ values }),
-        //         headers: { 'Content-Type': 'application.json' }
-        //     })
-        //     const data = await res.json().data.data
-        //     dispatch(addUser(data))
-        //     setState(prevState => ({
-        //         name: "", day: "", month: "", year: "", email: "", role: "user", title: "", field: "", age: "",
-        //         workExperience: "lessoneyear"
-        //     }));
-        //     closeModal();
-        // } catch (error) { console.log(error) }
+            const res = await fetch(`https://62891163abc3b5e327cc086b.endapi.io/users`, {
+                method: "POST",
+                body: JSON.stringify(values),
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'charset': 'utf-8 ' 
+                }
+            })
+
+            const data = await res.json();
+            dispatch(addUser(data.data))
+
+            setState(prevState => ({
+                name: "", day: "", month: "", year: "", email: "", role: "user", title: "", field: "", age: "",
+                workExperience: "lessoneyear"
+            }));
+            closeModal();
+        } catch (error) { console.log(error) }
     }
 
     const submitHandler = (receivedValues, event) => {
@@ -42,6 +47,7 @@ function ModalHandler({ closeModal, state, setState }) {
             name, membershipDate: (Number(year) + "/" + Number(month) + "/" + Number(day)), title, field, age,
             workExperience, email, role, password: key.toString()
         }
+        
         addUserHandler(values);
 
     }

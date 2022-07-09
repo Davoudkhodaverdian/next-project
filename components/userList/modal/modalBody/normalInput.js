@@ -13,13 +13,13 @@ function NameInput({ setValueInput }) {
                     let text = item == "title" ? "عنوان شغلی" : item == "field" ? "رشته تحصیلی" :
                         item == "age" ? "سن" : item === "name" ? "نام و نام خانوادگی" : "ایمیل";
                     return (
-                        <>
+                 
                             <div key={index}>
                                 <input type="text" id={item} name={item} className="input-custom"
                                     placeholder={text} onChange={setValueInput.bind(this, item)} />
                                 <label htmlFor={item}>{text}</label>
                             </div>
-                        </>
+                     
                     )
                 })
 
