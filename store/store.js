@@ -5,7 +5,7 @@ import counterSlice from './slices/counterSlice'
 import authenticateSlice from './slices/authenticateSlice'
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
-import { getDefaultMiddleware } from '@reduxjs/toolkit';
+
 
 const rootReducer = combineReducers({
   todo: todoSlice,
@@ -29,10 +29,7 @@ const persistedReducer = persistReducer(persistConfig, rootReducer)
 const store = configureStore({
   reducer: persistedReducer,
   //non-serializable value
-  middleware: getDefaultMiddleware =>
-    getDefaultMiddleware({
-      serializableCheck: false,
-    }),
+  middleware: getDefaultMiddleware => getDefaultMiddleware({ serializableCheck: false, }),
 })
 const persistor = persistStore(store)
 export { store, persistor }

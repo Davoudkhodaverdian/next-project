@@ -20,11 +20,17 @@ function ModalBody({ closeModal }) {
 
     return (
         <>
-            <form>
+            <form  dir='rtl'>
+                <div className='flex flex-row flex-wrap'>
                 <NormalInput setValueInput={setValueInput} name={name} />
+                </div>
                 <DateInput setValueInput={setValueInput} year={year} month={month} day={day} />
+
+            
                 <RoleInput Role={Role} setValueInput={setValueInput} />
                 <WorkExperienceInput workExperience={workExperience} setValueInput={setValueInput} />
+         
+
                 <ModalHandler closeModal={closeModal} state={state} setState={setState} />
             </form>
 

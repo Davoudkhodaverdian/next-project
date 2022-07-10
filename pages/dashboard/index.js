@@ -1,10 +1,12 @@
 import Dashboard from "../../components/dashboard/dashboard";
 import { useSelector } from 'react-redux';
-//import Home from ".";
+import { useRouter } from "next/router";
 
 export default function DashboardPage() {
 
     const authenticate = useSelector((state) => state.authenticate.authenticate);
-
-    return (!authenticate ? <div className="m-2 text-center">ابتدا باید وارد سایت شوید</div> : <Dashboard />)
+    const router = useRouter()
+    if (!authenticate) router.push("/");
+    return (<Dashboard />)
+    
 }

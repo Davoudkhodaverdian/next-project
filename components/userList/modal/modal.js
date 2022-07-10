@@ -9,7 +9,7 @@ function Modal({ show, setShow }) {
         <>
             <div className={`${show ? "" : "hidden"} fixed inset-0  h-full w-full bg-black bg-opacity-30 overflow-auto `}>
                 <div className={`fixed inset-0  h-full w-full  p-3 transition-all`} onClick={closeHandler}></div>
-                <div className="relative modal-container w-[100% - 40px] md:w-3/4 bg-white mx-5 md:mx-auto mt-10 rounded shadow ">
+                <div className="relative modal-container w-[100% - 40px] md:w-3/4 lg:w-2/4 bg-white mx-5 md:mx-auto mt-10 rounded shadow ">
                     <div className="flex justify-end">
                         <button onClick={closeHandler}>
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 m-2" viewBox="0 0 20 20" fill="currentColor">
@@ -18,7 +18,7 @@ function Modal({ show, setShow }) {
                         </button>
 
                     </div>
-                    <div className="p-3 flex flex-col text-right ">
+                    <div className="p-3 flex flex-col text-right " >
                         <ModalBody closeModal={closeHandler} />
                     </div>
 

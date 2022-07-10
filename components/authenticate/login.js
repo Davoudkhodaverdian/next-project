@@ -25,9 +25,13 @@ function Login() {
     return (
         <div className="flex flex-col justify-center items-center h-screen">
             <div className="flex flex-col max-w-[500px] rounded shadow-lg p-4 bg-white w-[calc(100%-16px)] mx-2 lg:w-1/2">
-                <h2 className="mt-6 text-3xl font-extrabold text-gray-900 text-right">ورود</h2>
-                <Form type="login" confirmHandler={enterHandler} setValueInput={setValueInput} />
-                <Link href="/register"><a><div>قبلا ثبت نام نکرده اید</div></a></Link>
+              
+                    <h2 className="mt-6 text-3xl font-extrabold text-gray-900 text-right">ورود</h2>
+                    <Form type="login" confirmHandler={enterHandler} setValueInput={setValueInput} />
+                    <Link href="/register"><a><div>قبلا ثبت نام نکرده اید</div></a></Link>
+
+             
+
             </div>
         </div>
     )

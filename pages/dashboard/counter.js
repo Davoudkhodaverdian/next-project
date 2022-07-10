@@ -1,10 +1,11 @@
 import Counter from '../../components/counter/counter'
 import { useSelector } from 'react-redux';
-//import Home from ".";
+import { useRouter } from "next/router";
 
 export default function LoginPage() {
 
     const authenticate = useSelector((state) => state.authenticate.authenticate);
-
-    return (!authenticate ? <div className="m-2 text-center">ابتدا باید وارد سایت شوید</div> : <Counter />)
+    const router = useRouter()
+    if (!authenticate) router.push("/");
+    return (<Counter />)
 }
