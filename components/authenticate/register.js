@@ -3,16 +3,15 @@ import { setAuthenticate } from "../../store/slices/authenticateSlice"
 import { useDispatch } from 'react-redux'
 import { useState } from 'react';
 import Form from './form';
+import { toast } from 'react-toastify';
 
 function Register() {
 
     const [state, setState] = useState({ name: "", email: "", password: "" })
     const dispatch = useDispatch();
-
     const setValueInput = (name, event) => { setState(prevState => ({ ...prevState, [name]: event.target.value })) }
 
     const registerHandler = (event) => {
-
         if (state.name === "" || state.password === "" || state.email === "") {
             event.preventDefault();
             if (state.name === "") alert("نام را به درستی وارد کنید")
@@ -20,6 +19,7 @@ function Register() {
             else if (state.password === "") alert("رمز عبور را به درستی وارد کنید")
         } else {
             dispatch(setAuthenticate(true));
+            toast(<div className='vazir-matn-font'>شما با موفقیت ثبت نام کردید</div>)
         }
     }
 

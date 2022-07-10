@@ -8,6 +8,7 @@ function BasicLayout({children}) {
             <Navbar/>
             {children}
             <div className='text-center'>Footer</div>
+          
         </div>
     );
 }

@@ -1,7 +1,7 @@
 import Register from "../components/authenticate/register";
 import { useSelector } from 'react-redux';
 import { useRouter } from "next/router";
-//import Home from ".";
+
 
 export default function RegisterPage() {
 

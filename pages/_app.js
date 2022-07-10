@@ -1,4 +1,5 @@
 import '../styles/globals.css'
+import 'react-toastify/dist/ReactToastify.css';
 import { Provider } from 'react-redux';
 import Head from 'next/head'
 import { PersistGate } from 'redux-persist/integration/react'
@@ -14,6 +15,7 @@ function MyApp({ Component, pageProps }) {
         <PersistGate loading={null} persistor={persistor}>
           <div dir='rtl'>
             <Component {...pageProps} />
+        
           </div>
         </PersistGate>
       </Provider>
