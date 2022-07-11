@@ -6,7 +6,7 @@ function ModalHandler({ closeModal, state, setState }) {
     const dispatch = useDispatch();
 
     const addUserHandler = async (values) => {
-
+        
         try {
 
             const res = await fetch(`https://62891163abc3b5e327cc086b.endapi.io/users`, {
@@ -23,7 +23,7 @@ function ModalHandler({ closeModal, state, setState }) {
 
             setState(prevState => ({
                 name: "", day: "", month: "", year: "", email: "", role: "user", title: "", field: "", age: "",
-                workExperience: "lessoneyear"
+                workExperience: "lessoneyear",userPassword: ""
             }));
             closeModal();
         } catch (error) { console.log(error) }
@@ -32,9 +32,10 @@ function ModalHandler({ closeModal, state, setState }) {
     const submitHandler = (receivedValues, event) => {
 
         event.preventDefault();
-        let { day, month, year, name, email, role, title, field, age, workExperience } = receivedValues;
+        let { day, month, year, name, email, role, title, field, age, workExperience, userPassword} = receivedValues;
 
         if (!isNaN(Number(name)) || name === "") return alert("نام را به درستی وارد کنید");
+        else if (userPassword === "") return alert("رمز عبور وارد نشده");
         else if (isNaN(Number(day)) || Number(day) === 0 || Number(day) > 31) return alert("روز را به درستی وارد کنید");
         else if (isNaN(Number(month)) || Number(month) === 0 || Number(month) > 12) return alert("ماه را به درستی وارد کنید");
         else if (isNaN(Number(year)) || Number(year) === 0) return alert("سال را به درستی وارد کنید");
@@ -42,13 +43,12 @@ function ModalHandler({ closeModal, state, setState }) {
         else if (field == "") return alert("رشته تحصیلی را به درستی وارد کنید");
         else if (isNaN(Number(age)) || age === "") return alert("سن را به درستی وارد کنید");
         let key = Date.now();
+        
         let values = {
             name, membershipDate: (Number(year) + "/" + Number(month) + "/" + Number(day)), title, field, age,
-            workExperience, email, role, password: key.toString()
+            workExperience, email, role,userPassword, password: key.toString()
         }
-        
         addUserHandler(values);
-
     }
 
     return (

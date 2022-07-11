@@ -16,6 +16,7 @@ function Row(props) {
         editedMonth: props.UserData.membershipDate.split("/")[1], editedYear: props.UserData.membershipDate.split("/")[0],
         editedEmail: props.UserData.email, editedRole: props.UserData.role, editedTitle: props.UserData.title,
         editedField: props.UserData.field, editedAge: props.UserData.age, editedWorkExperience: props.UserData.workExperience,
+
     });
 
     const setValueInput = (name, event) => { setState(prevState => ({ ...prevState, [name]: event.target.value })) }
@@ -29,7 +30,7 @@ function Row(props) {
             {
                 Object.keys(UserData).map((element, index) => {
 
-                    if (element === "password" || element === "id") return null;
+                    if (element === "userPassword" || element === "id" || element === "password") return null;
                     else if (!edit) return (<NormalRow element={element} UserData={UserData} index={index} key={index} />)
                     else {
                         if (element === "role") {
@@ -48,7 +49,7 @@ function Row(props) {
                         } else {
                             return (
                                 <NormalElement key={index} element={element} editedTitle={editedTitle}
-                                 editedField={editedField}editedAge={editedAge} editedName={editedName} 
+                                 editedField={editedField} editedAge={editedAge} editedName={editedName} 
                                  editedEmail={editedEmail} setValueInput={setValueInput} />
                             )
                         }

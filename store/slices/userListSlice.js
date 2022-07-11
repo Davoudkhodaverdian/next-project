@@ -11,7 +11,7 @@ const userLstSlice = createSlice({
       state.list = payload;
     },
     addUser: (state, action) => {
-      
+
       state.list.push(action.payload)
     },
     removeUser: (state, action) => {
@@ -23,8 +23,8 @@ const userLstSlice = createSlice({
       let { id, dataChanged } = action.payload
       let data = state.list.map(item => {
         if (item.id === id) {
-          ["name","membershipDate","email","role","title","field","age","workExperience"].forEach(nameItem => {
-            item[nameItem] = dataChanged[nameItem]
+          ["name", "membershipDate", "email", "role", "title", "field", "age", "workExperience", "userPassword"].forEach(nameItem => {
+            item[nameItem] = nameItem === "userPassword" ? item[nameItem] : dataChanged[nameItem]
           })
         }
         return item
