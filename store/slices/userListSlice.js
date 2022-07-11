@@ -19,7 +19,7 @@ const userLstSlice = createSlice({
       state.list = state.list.filter(item => item.id !== action.payload)
     },
     editUser: (state, action) => {
-
+      debugger
       let { id, dataChanged } = action.payload
       let data = state.list.map(item => {
         if (item.id === id) {

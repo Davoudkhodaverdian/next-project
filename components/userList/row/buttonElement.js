@@ -13,13 +13,13 @@ function ButtonElement({ edit, state, UserData, setState }) {
     const currentUser = useSelector((state) => state.currentUser.currentUser);
     const router = useRouter();
     const EditChangeMethod = async (id) => {
+        debugger
         let dataChanged = {
             name: state.editedName, email: state.editedEmail, role: state.editedRole, password: Date.now().toString(),
             membershipDate: (Number(state.editedYear) + "/" + Number(state.editedMonth) + "/" + Number(state.editedDay)),
             title: state.editedTitle, field: state.editedField, age: state.editedAge, workExperience: state.editedWorkExperience,
         }
-
-        try {
+      
             const res = await fetch(`https://62891163abc3b5e327cc086b.endapi.io/users/${id}`, {
                 method: "PUT",
                 body: JSON.stringify(dataChanged),
@@ -28,12 +28,15 @@ function ButtonElement({ edit, state, UserData, setState }) {
                     'charset': 'utf-8 '
                 }
             });
-
-            dispatch(editUser({ id, dataChanged }))
-            if (currentUser.id === id) { dispatch(setCurrentUser(dataChanged)) }
-            setState({ ...dataChanged, edit: false })
+            debugger
+            const data = await res.json();
+            debugger
+            const responseData = data.data;
+            dispatch(editUser({ id, dataChanged:responseData }))
+            if (currentUser.id === id) { dispatch(setCurrentUser(responseData)) }
+            setState({ ...responseData, edit: false })
             toast(<div className='vazir-matn-font'>ویرایش انجام شد</div>);
-        } catch (error) { console.log(error) }
+ 
     }
 
     const EditStateMethod = (key) => { setState(prevState => ({ ...prevState, edit: true })) }
