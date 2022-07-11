@@ -32,7 +32,7 @@ function Navbar() {
                 <div
                     className={
                         `md:flex flex-col md:flex-row  w-full md:w-auto items-start ${!state ? "hidden" : "flex flex-col"} 
-                        md:space-x-4 md:space-x-reverse space-y-4 md:space-y-0 mt-2 md:mt-0`
+                        md:space-x-4 md:space-x-reverse space-y-4 md:space-y-0 mt-2 md:mt-0 md:items-center`
                     }
                 >
                     <Link href="/">

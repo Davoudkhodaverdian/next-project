@@ -1,0 +1,19 @@
+[
+    {
+        "descreption": "نام کاربری",
+        "name": "name"
+
+    },
+    {
+        "descreption": "ایمیل",
+        "name": "email"
+ 
+    },
+    {
+        "descreption": "رمز عبور",
+        "name": "userPassword"
+ 
+    }
+
+
+]

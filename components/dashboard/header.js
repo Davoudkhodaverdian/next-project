@@ -13,7 +13,7 @@ function Header({ sendSidebarState, sidebar }) {
     }
 
     return (
-        <div className="flex flex-row justify-between shadow h-16 items-center px-2">
+        <div className="flex flex-row justify-between shadow items-center px-2">
 
             <div className="flex flex-row items-center">
                 <button className='focus:ring-2 focus:ring-indigo-700 rounded-sm m-2 md:hidden' onClick={showSidebar}>

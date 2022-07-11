@@ -1,6 +1,6 @@
 
 
-function NameInput({ setValueInput }) {
+function NormalInput({ setValueInput }) {
 
     return (
 
@@ -31,4 +31,4 @@ function NameInput({ setValueInput }) {
     )
 }
 
-export default NameInput
+export default NormalInput
