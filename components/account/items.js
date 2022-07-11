@@ -2,11 +2,14 @@
 import { setAuthenticate } from "../../store/slices/authenticateSlice"
 import { useDispatch } from 'react-redux'
 import Link from "next/link";
+import { toast } from 'react-toastify';
+
 function AccountItems() {
 
     const dispatch = useDispatch()
     const authenticateHandler = () => {
         dispatch(setAuthenticate(false))
+        toast(<div className='vazir-matn-font'>شما از سایت خارج شدید</div>)
     }
 
     return (
