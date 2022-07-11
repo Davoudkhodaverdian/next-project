@@ -16,7 +16,7 @@ function Row(props) {
         editedMonth: props.UserData.membershipDate.split("/")[1], editedYear: props.UserData.membershipDate.split("/")[0],
         editedEmail: props.UserData.email, editedRole: props.UserData.role, editedTitle: props.UserData.title,
         editedField: props.UserData.field, editedAge: props.UserData.age, editedWorkExperience: props.UserData.workExperience,
-
+        editedUserPassword: props.UserData.userPassword,
     });
 
     const setValueInput = (name, event) => { setState(prevState => ({ ...prevState, [name]: event.target.value })) }

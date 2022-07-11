@@ -13,13 +13,14 @@ function ButtonElement({ edit, state, UserData, setState }) {
     const currentUser = useSelector((state) => state.currentUser.currentUser);
     const router = useRouter();
     const EditChangeMethod = async (id) => {
-        debugger
+
         let dataChanged = {
             name: state.editedName, email: state.editedEmail, role: state.editedRole, password: Date.now().toString(),
             membershipDate: (Number(state.editedYear) + "/" + Number(state.editedMonth) + "/" + Number(state.editedDay)),
             title: state.editedTitle, field: state.editedField, age: state.editedAge, workExperience: state.editedWorkExperience,
+            userPassword: state.editedUserPassword,
         }
-      
+        try {
             const res = await fetch(`https://62891163abc3b5e327cc086b.endapi.io/users/${id}`, {
                 method: "PUT",
                 body: JSON.stringify(dataChanged),
@@ -28,18 +29,22 @@ function ButtonElement({ edit, state, UserData, setState }) {
                     'charset': 'utf-8 '
                 }
             });
-            debugger
+
             const data = await res.json();
-            debugger
             const responseData = data.data;
-            dispatch(editUser({ id, dataChanged:responseData }))
+            dispatch(editUser({ dataChanged: responseData }))
+
             if (currentUser.id === id) { dispatch(setCurrentUser(responseData)) }
-            setState({ ...responseData, edit: false })
+            setState(prevState => ({ ...prevState, edit: false }))
             toast(<div className='vazir-matn-font'>ویرایش انجام شد</div>);
- 
+
+        } catch (error) { console.log(error) }
     }
 
-    const EditStateMethod = (key) => { setState(prevState => ({ ...prevState, edit: true })) }
+    const EditStateMethod = () => {
+      
+        setState(prevState => ({ ...prevState, edit: true }))
+    }
 
     const Cancel = () => {
         setState({
@@ -60,7 +65,7 @@ function ButtonElement({ edit, state, UserData, setState }) {
             if (currentUser.id === id) {
                 dispatch(setCurrentUser({}));
                 dispatch(setAuthenticate(false));
-                toast(<div className='vazir-matn-font'>شما از لیست کاربران حذف شدید، از سایت خارج میشوید</div>);
+                // toast(<div className='vazir-matn-font'>شما از لیست کاربران حذف شدید، از سایت خارج میشوید</div>);
                 router.push("/");
             } else {
                 dispatch(removeUser(id));
@@ -69,19 +74,18 @@ function ButtonElement({ edit, state, UserData, setState }) {
         } catch (error) { console.log(error) }
     }
 
-    let { id, key } = UserData;
     return (
         <td className="px-2">
             {
                 edit ? (
                     <>
-                        <button type="button" className="btn btn-sm btn-primary btn-custom mx-2 text-indigo-600" onClick={EditChangeMethod.bind(this, id, key)}>Edited</button>
+                        <button type="button" className="btn btn-sm btn-primary btn-custom mx-2 text-indigo-600" onClick={EditChangeMethod.bind(this, UserData.id)}>Edited</button>
                         <button type="button" className="btn btn-sm btn-danger remove btn-custom text-red-600" onClick={Cancel.bind(this)}>Cancel</button>
                     </>
                 ) : (
                     <>
-                        <button type="button" className="btn btn-sm btn-primary btn-custom mx-2 text-indigo-600" onClick={EditStateMethod.bind(this, key)}>Edit</button>
-                        <button type="button" className="btn btn-sm btn-danger remove btn-custom text-red-600" onClick={removeUserHandler.bind(this, id)}>Remove</button>
+                        <button type="button" className="btn btn-sm btn-primary btn-custom mx-2 text-indigo-600" onClick={EditStateMethod.bind(this)}>Edit</button>
+                        <button type="button" className="btn btn-sm btn-danger remove btn-custom text-red-600" onClick={removeUserHandler.bind(this, UserData.id)}>Remove</button>
                     </>
                 )
 
