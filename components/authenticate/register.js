@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { setAuthenticate } from "../../store/slices/authenticateSlice"
+import { setCurrentUser } from "../../store/slices/currentUserSlice"
 import { useDispatch } from 'react-redux'
 import { useState } from 'react';
 import Form from './form';
@@ -30,6 +31,7 @@ function Register() {
             const data = await res.json();
             dispatch(addUser(data.data))
             dispatch(setAuthenticate(true));
+            dispatch(setCurrentUser(data.data));
             toast(<div className='vazir-matn-font'>شما با موفقیت ثبت نام کردید</div>)
             router.push("/");
 

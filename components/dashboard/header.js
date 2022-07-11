@@ -1,12 +1,13 @@
 
 
 import AccountItems from '../account/items';
+import { useSelector } from 'react-redux';
 
 function Header({ sendSidebarState, sidebar }) {
 
+    const currentUser = useSelector((state) => state.currentUser.currentUser);
 
     const showSidebar = (event) => {
-
         event.preventDefault()
         sendSidebarState(!sidebar)
     }
@@ -20,11 +21,11 @@ function Header({ sendSidebarState, sidebar }) {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
-                <div>نام کاربر</div>
+                <div>{currentUser.name ? ("نام کاربر: " + currentUser.name) : ""}</div>
             </div>
 
             <div>
-            <AccountItems />
+                <AccountItems />
             </div>
         </div>
     )

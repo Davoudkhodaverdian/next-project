@@ -1,6 +1,7 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import todoSlice from './slices/todoSlice'
 import userListSlice from './slices/userListSlice'
+import currentUserSlice from './slices/currentUserSlice'
 import counterSlice from './slices/counterSlice'
 import authenticateSlice from './slices/authenticateSlice'
 import { persistStore, persistReducer } from 'redux-persist'
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   user: userListSlice,
   counter: counterSlice,
   authenticate: authenticateSlice,
+  currentUser: currentUserSlice,
 })
 
 //without persist
@@ -22,7 +24,7 @@ const rootReducer = combineReducers({
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ["authenticate"] // only this item will be persisted
+  whitelist: ["authenticate","currentUser"] // only this item will be persisted
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
@@ -30,7 +32,8 @@ const store = configureStore({
   reducer: persistedReducer,
   //non-serializable value
   middleware: getDefaultMiddleware => getDefaultMiddleware({ serializableCheck: false, }),
-})
+});
+
 const persistor = persistStore(store)
 export { store, persistor }
 

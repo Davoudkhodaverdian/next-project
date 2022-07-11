@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { setAuthenticate } from "../../store/slices/authenticateSlice"
+import { setCurrentUser } from "../../store/slices/currentUserSlice"
 import { useDispatch } from 'react-redux'
 import { useState } from 'react';
 import Form from './form';
@@ -21,6 +22,7 @@ function Login() {
 
             if (userFinded) {
                 dispatch(setAuthenticate(true));
+                dispatch(setCurrentUser(userFinded));
                 router.push("/");
             } else alert("چنین کاربری وجود ندارد")
 
