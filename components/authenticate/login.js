@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux'
 import { useState } from 'react';
 import Form from './form';
 import { useRouter } from 'next/router';
+import { toast } from 'react-toastify';
 
 function Login() {
 
@@ -23,6 +24,7 @@ function Login() {
             if (userFinded) {
                 dispatch(setAuthenticate(true));
                 dispatch(setCurrentUser(userFinded));
+                toast(<div className='vazir-matn-font'>شما با موفقیت وارد شدید</div>)
                 router.push("/");
             } else alert("چنین کاربری وجود ندارد")
 
