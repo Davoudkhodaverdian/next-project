@@ -1,6 +1,6 @@
 
 
-import AccountItems from '../account/items';
+import AvatarItems from '../account/avatarItems';
 import { useSelector } from 'react-redux';
 
 function Header({ sendSidebarState, sidebar }) {
@@ -25,7 +25,7 @@ function Header({ sendSidebarState, sidebar }) {
             </div>
 
             <div>
-                <AccountItems />
+                <AvatarItems />
             </div>
         </div>
     )

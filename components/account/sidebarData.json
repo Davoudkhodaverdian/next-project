@@ -1,0 +1,16 @@
+[
+    {
+        "descreption": "اطلاعات پروفایل",
+        "name": "data-profile",
+        "id": 1,
+        "root": "/account/information"
+    },
+    {
+        "descreption": "ویرایش پروفایل",
+        "name": "data-profile",
+        "id": 2,
+        "root": "/account/edit"
+    }
+
+
+]

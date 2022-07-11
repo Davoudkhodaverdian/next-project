@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import AccountItems from '../../account/items';
+import AvatarItems from '../../account/avatarItems';
 import Link from 'next/link'
 
 function Navbar() {
@@ -14,7 +14,7 @@ function Navbar() {
 
  
     return (
-        <nav className=' p-3 bg-gray-100'>
+        <nav className=' p-3 bg-gray-100 shadow'>
             <div className='flex flex-wrap justify-between items-center container mx-auto'>
                 <div className='flex  items-center'>
                     <img src="/images/logo.svg" width={50} alt="logo" />
@@ -53,7 +53,7 @@ function Navbar() {
                                         <button className="px-3 rounded-lg text-white text-center bg-violet-500 font-bold drop-shadow hover:bg-violet-600 active:bg-violet-700 focus:ring focus:ring-violet-300 ">داشبورد</button>
                                     </a>
                                 </Link>
-                                <AccountItems />
+                                <AvatarItems />
                             </>
 
                             :

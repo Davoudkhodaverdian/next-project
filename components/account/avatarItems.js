@@ -14,10 +14,10 @@ function AccountItems() {
 
     return (
         <>
-            <Link href="/account">
+            <Link href="/account/information">
                 <a>
                     <button className="flex flex-row items-center">
-                        <span className="px-2">حساب کاربری من</span>
+                        <span className="px-2">پروفایل</span>
                         {/* avatar svg */}
                         <img src="/images/maleAvatar.svg" width={24} alt="avatar" />
                     </button>

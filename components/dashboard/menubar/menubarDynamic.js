@@ -19,7 +19,7 @@ function Menubar({ sidebar, sendSidebarState }) {
                     </button>
                     <img className="h-8 w-auto" src="/images/workflow.svg" alt="Workflow" />
                 </div>
-                <MenubarItems sendSidebarState={sendSidebarState} />
+                <MenubarItems />
             </nav>
 
         </>
