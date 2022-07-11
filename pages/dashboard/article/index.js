@@ -12,7 +12,7 @@ export default function Article({ posts }) {
     const [hasMore, setHasMore] = useState(true);
 
     const fetchMoreData = () => {
-       
+
         if (state.length >= 100) {
             setHasMore(false);
             return;
@@ -29,7 +29,6 @@ export default function Article({ posts }) {
                 <div>مقالات</div>
                 <div>
                     {
-
                         <InfiniteScroll
                             dataLength={state.length}
                             next={fetchMoreData}

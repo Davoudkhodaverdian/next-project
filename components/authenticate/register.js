@@ -29,6 +29,7 @@ function Register() {
                 headers: { 'Content-Type': 'application/json', 'charset': 'utf-8 ' }
             })
             const data = await res.json();
+            
             dispatch(addUser(data.data))
             dispatch(setAuthenticate(true));
             dispatch(setCurrentUser(data.data));

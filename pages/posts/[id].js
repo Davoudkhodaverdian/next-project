@@ -18,11 +18,10 @@ const Posts = ({ posts }) => {
 }
 
 export async function getServerSideProps({ params }) {
-    
+
     // Fetch data from external API
     const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`)
-    const posts = await res.json()
-
+    const posts = await res.json();
     // Pass data to the page via props
     return { props: { posts } }
 }
