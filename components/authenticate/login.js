@@ -18,9 +18,9 @@ function Login() {
         try {
             const res = await fetch(`https://62891163abc3b5e327cc086b.endapi.io/users`)
             const data = await res.json();
-            const userFinded = null
+            const userFinded = null;
+            
             data.data.map(item => { if (item.email === state.email && item.userPassword === state.password) userFinded = item });
-
             if (userFinded) {
                 dispatch(setAuthenticate(true));
                 dispatch(setCurrentUser(userFinded));

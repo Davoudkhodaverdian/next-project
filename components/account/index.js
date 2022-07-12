@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import ProfileItems from "./profileItems";
 
 function UserAccount({ children }) {
-
+  
   const currentUser = useSelector(state => state.currentUser.currentUser);
 
   return (
@@ -19,17 +19,9 @@ function UserAccount({ children }) {
                 <img src="/images/maleAvatar.svg" width={60} alt="avatar" />
               </div>
             </div>
-            <div>
-              <ProfileItems />
-            </div>
-            <div>
-
-            </div>
+            <div><ProfileItems /></div>
           </div>
-
-          <div className="p-2 m-3">
-          {children}
-          </div>
+          <div className="p-2 m-3">{children}</div>
         </div>
       </div>
     </BasicLayout>

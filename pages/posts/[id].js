@@ -1,5 +1,3 @@
-
-
 const Posts = ({ posts }) => {
 
     console.log(posts)
@@ -27,3 +25,5 @@ export async function getServerSideProps({ params }) {
 }
 
 export default Posts;
+
+

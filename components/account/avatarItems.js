@@ -8,6 +8,7 @@ function AccountItems() {
 
     const dispatch = useDispatch()
     const authenticateHandler = () => {
+        //logout
         dispatch(setAuthenticate(false))
         toast(<div className='vazir-matn-font'>شما از سایت خارج شدید</div>)
     }
@@ -21,10 +22,9 @@ function AccountItems() {
                         {/* avatar svg */}
                         <img src="/images/maleAvatar.svg" width={24} alt="avatar" className="my-2" />
                     </button>
-
                 </a>
             </Link>
-            {/* logout */}
+           
             <button onClick={authenticateHandler} >
                 <Link href="/" >
                     <a className="flex flex-row items-center">
@@ -32,7 +32,6 @@ function AccountItems() {
                             <path fillRule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clipRule="evenodd" />
                         </svg>
                         <span className="px-2">خروج</span>
-
                     </a>
                 </Link>
             </button>

@@ -65,8 +65,8 @@ export default function Article({ posts }) {
                                                 }>
                                                 <div>{item.title}</div>
                                                 <div>
-                                                    <img src='/images/undraw_control_panel.svg' className='' />
-                                                    {/* <img src={`https://picsum.photos/800/600?random=${item.id}`} className='rounded-md shadow' /> */}
+                                                    {/* <img src='/images/undraw_control_panel.svg' className='' /> */}
+                                                    <img src={`https://picsum.photos/800/600?random=${item.id}`} className='rounded-md shadow' />
                                                 </div>
                                                 <div className='text-red-700'> id: {item.id}</div>
                                             </div>

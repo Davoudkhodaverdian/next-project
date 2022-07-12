@@ -1,4 +1,4 @@
-import EditAccount from '../../components/account/editAccount/edit'
+import EditAccount from '../../components/account/edit/edit'
 
 export default function EditAccountPage() {
 

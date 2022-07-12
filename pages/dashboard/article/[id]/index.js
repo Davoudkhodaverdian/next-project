@@ -18,8 +18,8 @@ const SingleArticle = ({ posts }) => {
             <div>explanation: {body}</div>
           </div>
           <div>
-            <img src='/images/undraw_control_panel.svg' className='' />
-            {/* <img src={`https://picsum.photos/800/600?random=${id}`} className='rounded-md shadow' /> */}
+            {/* <img src='/images/undraw_control_panel.svg' className='' /> */}
+            <img src={`https://picsum.photos/800/600?random=${id}`} className='rounded-md shadow' />
           </div>
 
         </div>
