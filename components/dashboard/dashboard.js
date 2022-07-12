@@ -4,6 +4,7 @@
 import Header from './header';
 import { useState } from 'react';
 import MenubarDynamic from './menubar/menubarDynamic'
+import Modal from './../userList/modal/modal'
 
 
 function Dashbord({ children }) {
@@ -21,6 +22,7 @@ function Dashbord({ children }) {
                 </div>
             </div>
             <MenubarDynamic sidebar={sidebar} sendSidebarState={sendSidebarState} />
+            <Modal/>  
         </div>
     );
 }

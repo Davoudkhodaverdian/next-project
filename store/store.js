@@ -4,6 +4,7 @@ import userListSlice from './slices/userListSlice'
 import currentUserSlice from './slices/currentUserSlice'
 import counterSlice from './slices/counterSlice'
 import authenticateSlice from './slices/authenticateSlice'
+import modalSlice from './slices/modalSlice'
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
   counter: counterSlice,
   authenticate: authenticateSlice,
   currentUser: currentUserSlice,
+  showModal: modalSlice,
 })
 
 //without persist
