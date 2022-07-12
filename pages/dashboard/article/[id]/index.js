@@ -1,10 +1,10 @@
 import Head from "next/head"
 import Header from "./header"
+
 const SingleArticle = ({ posts }) => {
 
-
   const { id, title, body } = posts
-
+  
   return (
     <>
       <Head>
@@ -26,14 +26,11 @@ const SingleArticle = ({ posts }) => {
 
         <div className='text-red-700'> id: {id}</div>
       </div>
-
-
     </>
   )
 }
 
 export async function getServerSideProps({ params }) {
-
 
   // Fetch data from external API
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`)
