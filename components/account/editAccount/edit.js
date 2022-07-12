@@ -22,7 +22,7 @@ function EditAccount() {
             <div><ButtonsEditAccount setEdit={setEdit} edit={edit} state={state} /></div>
             <form>
                 {InputItems.map((item, index) => (
-                    <div key={index} className="flex justify-between items-center">
+                    <div key={index} className="flex justify-between items-center max-w-xs">
                         <div>
                             <label className="px-1" htmlFor={item.name}>{item.descreption}</label>
                         </div>

@@ -10,8 +10,8 @@ function UserAccount({ children }) {
   return (
     <BasicLayout>
       <div>
-        <div className="flex flex-row">
-          <div className="m-3 text-center border border-gray-200 rounded w-[300px]">
+        <div className="md:flex flex-row">
+          <div className="m-3 text-center border border-gray-200 rounded w-[100% - 24px] md:w-[300px] ">
             <div className='bg-gray-100 p-3'>
               <div>نام کاربر: {currentUser.name}</div>
               <div className="flex justify-center items-center p-4 m-3">
