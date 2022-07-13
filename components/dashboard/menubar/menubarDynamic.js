@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import MenubarItems from './menubarItems';
 
 function Menubar({ sidebar, sendSidebarState }) {
@@ -23,4 +24,4 @@ function Menubar({ sidebar, sendSidebarState }) {
     )
 }
 
-export default Menubar;
+export default memo(Menubar);

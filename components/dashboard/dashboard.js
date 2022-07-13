@@ -2,7 +2,7 @@
 
 
 import Header from './header';
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import MenubarDynamic from './menubar/menubarDynamic'
 import Modal from './../userList/modal/modal'
 import { useSelector } from "react-redux";
@@ -12,7 +12,7 @@ function Dashbord({ children }) {
     const [sidebar, setSidebar] = useState(false);
     const sendSidebarState = (show) => { setSidebar(show) }
     const show = useSelector(state => state.showModal.show);
-    
+
     return (
         <div className='pr-0 sm:flex flex-row overflow-hidden '>
             <div className="flex flex-col w-full  md:pr-48">
@@ -22,9 +22,9 @@ function Dashbord({ children }) {
                 </div>
             </div>
             <MenubarDynamic sidebar={sidebar} sendSidebarState={sendSidebarState} />
-            {show && <Modal show={show}/> } 
+            {show && <Modal show={show} />}
         </div>
     );
 }
 
-export default Dashbord;
+export default memo(Dashbord);

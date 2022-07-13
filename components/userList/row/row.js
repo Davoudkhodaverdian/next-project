@@ -1,5 +1,5 @@
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import NormalElement from './normalElement';
 import RoleElement from './roleElement';
 import NormalEditedElement from './normalEditedElement';
@@ -10,17 +10,25 @@ import ButtonElement from './buttonElement/buttonElement';
 function Row({ UserData, rowNumber, indexRow }) {
 
     const [state, setState] = useState({
-        edit: false, editedName: UserData.name, editedDay: UserData.membershipDate.split("/")[2],
-        editedMonth: UserData.membershipDate.split("/")[1], editedYear: UserData.membershipDate.split("/")[0],
-        editedEmail: UserData.email, editedRole: UserData.role, editedTitle: UserData.title,
-        editedField: UserData.field, editedAge: UserData.age, editedWorkExperience: UserData.workExperience,
-        editedUserPassword: UserData.userPassword,
+        edit: false, editedName: "", editedDay: "", editedMonth: "", editedYear: "", editedEmail: "", editedRole: "",
+        editedTitle: "", editedField: "", editedAge: "", editedWorkExperience: "", editedUserPassword: "",
     });
+
+    useEffect(() => {
+
+        let { name, membershipDate, email, role, title, field, age, workExperience, userPassword } = UserData
+        setState({
+            edit: false, editedName: name, editedDay: membershipDate.split("/")[2], editedMonth: membershipDate.split("/")[1],
+            editedYear: membershipDate.split("/")[0], editedEmail: email, editedRole: role, editedTitle: title, editedField: field,
+            editedAge: age, editedWorkExperience: workExperience, editedUserPassword: userPassword,
+        })
+    }, [])
 
     const setValueInput = (name, event) => { setState(prevState => ({ ...prevState, [name]: event.target.value })) }
 
-    let { edit, editedName, editedDay, editedMonth, editedYear, editedEmail, editedRole, editedTitle, editedField,
-        editedAge, editedWorkExperience
+    let {
+        edit, editedName, editedDay, editedMonth, editedYear, editedEmail, editedRole, editedTitle, editedField, editedAge,
+        editedWorkExperience
     } = state;
 
     let rowItems = [

@@ -2,6 +2,7 @@
 
 import AvatarItems from '../account/avatarItems';
 import { useSelector } from 'react-redux';
+import { memo } from 'react';
 
 function Header({ sendSidebarState, sidebar }) {
 
@@ -19,11 +20,11 @@ function Header({ sendSidebarState, sidebar }) {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
-                <div>{currentUser.name ? ("نام کاربر: " + currentUser.name) : ""}</div>
+                <div>{currentUser.name ? `نام کاربر: ${currentUser.name}` : ''}</div>
             </div>
             <div><AvatarItems /></div>
         </div>
     )
 }
 
-export default Header;
+export default memo(Header);

@@ -1,6 +1,7 @@
 
 import Dashbord from "./dashboard";
 import { ToastContainer } from 'react-toastify';
+import { memo } from "react";
 
 function DashboardLayout({ children }) {
 
@@ -15,4 +16,4 @@ function DashboardLayout({ children }) {
     );
 }
 
-export default DashboardLayout;
+export default memo(DashboardLayout);

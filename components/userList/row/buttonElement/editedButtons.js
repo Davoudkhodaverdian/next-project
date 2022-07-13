@@ -1,15 +1,18 @@
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 
 import { setCurrentUser } from '../../../../store/slices/currentUserSlice';
 import { editUser } from '../../../../store/slices/userListSlice';
+import Loading from '../../../loading/loading';
 
-function EditedButtons({ UserData, setState,state }) {
+function EditedButtons({ UserData, setState, state }) {
 
     const dispatch = useDispatch();
     const currentUser = useSelector((state) => state.currentUser.currentUser);
-  
+    const [loading, setLoading] = useState(false);
+
     const EditChangeMethod = async (id) => {
 
         let dataChanged = {
@@ -20,6 +23,7 @@ function EditedButtons({ UserData, setState,state }) {
         }
 
         try {
+            setLoading(true)
             const res = await fetch(`https://62891163abc3b5e327cc086b.endapi.io/users/${id}`, {
                 method: "PUT",
                 body: JSON.stringify(dataChanged),
@@ -28,7 +32,7 @@ function EditedButtons({ UserData, setState,state }) {
                     'charset': 'utf-8 '
                 }
             });
-
+            setLoading(false)
             const data = await res.json();
             const responseData = data.data;
             dispatch(editUser({ dataChanged: responseData }))
@@ -50,10 +54,19 @@ function EditedButtons({ UserData, setState,state }) {
     }
 
     return (
-        <>
-            <button type="button" className="btn btn-sm btn-primary btn-custom mx-2 text-indigo-600" onClick={EditChangeMethod.bind(this, UserData.id)}>Edited</button>
-            <button type="button" className="btn btn-sm btn-danger remove btn-custom text-red-600" onClick={Cancel.bind(this)}>Cancel</button>
-        </>
+        <div className='flex'>
+            <div>
+                {
+                    loading ?
+                       <Loading/> :
+                        <button type="button" className="btn btn-sm btn-primary btn-custom mx-2 text-indigo-600"
+                            onClick={EditChangeMethod.bind(this, UserData.id)}>Edited</button>
+                }
+            </div>
+            <div>
+                <button type="button" className="btn btn-sm btn-danger remove btn-custom text-red-600" onClick={Cancel.bind(this)}>Cancel</button>
+            </div>
+        </div>
 
     );
 }
