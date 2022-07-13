@@ -1,7 +1,7 @@
 
-import ManagementPanel from "../components/managementPanel/managementPanel";
+import ManagementPanel from "../../components/managementPanel/managementPanel";
 import { useDispatch } from 'react-redux';
-import { setUser } from "../store/slices/userListSlice";
+import { setUser } from "../../store/slices/userListSlice";
 
 export default function ManagementPanelPage({ users }) {
 

@@ -21,7 +21,7 @@
         "descreption": "پنل مدیریت",
         "name": "management-panel",
         "id": 4,
-        "root": "/managementPanel"
+        "root": "/dashboard/managementPanel"
     },
     {
         "descreption": "مقالات",
