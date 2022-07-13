@@ -47,7 +47,6 @@ function Login() {
                 <h2 className="mt-6 text-3xl font-extrabold text-gray-900 text-right">ورود</h2>
                 <Form type="login" confirmHandler={enterHandler} setValueInput={setValueInput} />
                 <Link href="/register"><a><div>قبلا ثبت نام نکرده اید</div></a></Link>
-
             </div>
         </div>
     )

@@ -38,7 +38,7 @@ export default function Article({ posts }) {
                             endMessage={<p style={{ textAlign: "center" }}><b>Yay! You have seen it all</b></p>}
                         >
                             <div className='flex flex-wrap'>
-                                {state.map((item, index) => (<ItemsInfiniteScroll item={item} />))}
+                                {state.map((item) => (<ItemsInfiniteScroll key={item.id} item={item} />))}
                             </div>
                         </InfiniteScroll>
                     }

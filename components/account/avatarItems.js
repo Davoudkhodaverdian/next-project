@@ -1,4 +1,3 @@
-
 import { setAuthenticate } from "../../store/slices/authenticateSlice"
 import { useDispatch } from 'react-redux'
 import Link from "next/link";
@@ -24,7 +23,6 @@ function AccountItems() {
                     </button>
                 </a>
             </Link>
-           
             <button onClick={authenticateHandler} >
                 <Link href="/" >
                     <a className="flex flex-row items-center">

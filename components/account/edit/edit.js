@@ -23,8 +23,8 @@ function EditAccount() {
         <AccountLayout>
             <div><ButtonsEditAccount setEdit={setEdit} edit={edit} dataChanged={state} /></div>
             <form>
-                {EditInputItems.map((item, index) => (
-                    <div key={index} className="flex justify-between items-center max-w-xs">
+                {EditInputItems.map((item) => (
+                    <div key={item.id} className="flex justify-between items-center max-w-xs">
                         <div><label className="px-1" htmlFor={item.name}>{item.descreption}</label></div>
                         <div>
                             <input type={item.name === "userPassword" ? "password" : "text"} id={item.name}

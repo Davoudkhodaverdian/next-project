@@ -13,7 +13,8 @@ function Register() {
     const [state, setState] = useState({ name: "", email: "", password: "" })
     const dispatch = useDispatch();
     const setValueInput = (name, event) => { setState(prevState => ({ ...prevState, [name]: event.target.value })) }
-    const router = useRouter()
+    const router = useRouter();
+    
     const checkInputs = async () => {
 
         let key = Date.now();

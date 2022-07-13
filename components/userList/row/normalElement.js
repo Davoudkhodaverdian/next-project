@@ -1,23 +1,20 @@
 
-function NormalElement({ element, editedTitle, editedField,editedAge,editedName,editedEmail,setValueInput }) {
+function NormalElement({ element, UserData }) {
 
-    let text = element === "title" ? "عنوان شغلی" :
-        element === "field" ? "رشته تحصیلی" : element === "age" ? "سن" : element === "name" ? "نام" : "ایمیل";
-    let valueItem = element === "title" ? editedTitle :
-        element === "field" ? editedField : element === "age" ? editedAge : element === "name" ? editedName : editedEmail;
+    let elem = UserData[element];
+    let txt = elem === "lessoneyear" ? "کمتر ازیک سال" : elem === "betweenoneandtwoyear" ? "بین یک تا دو سال" : "بیشتر از دو سال";
 
     return (
-        <td className="px-2">
+        <>
             {
-                <input type="text"  className="outline-none w-full border border-slate-400 rounded-md px-1"  id={element} name={element} 
-                    placeholder={text} value={valueItem}
-                    onChange={
-                        setValueInput.bind(
-                            this, ("edited" + element.charAt(0).toUpperCase() + element.slice(1))
-                        )}
-                />
-            }
-        </td>
+                element === "workExperience" ?
+                    <td className="py-2 px-4 mx-2">
+                        <div className="max-w-[120px] overflow-hidden overflow-ellipsis">{txt}</div>
+                    </td> :
+                    <td className="py-2 px-4 mx-2">
+                        <div className="max-w-[120px] overflow-hidden overflow-ellipsis">{elem}</div>
+                    </td>}
+        </>
     )
 }
 

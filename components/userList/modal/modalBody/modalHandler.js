@@ -8,7 +8,6 @@ function ModalHandler({ closeModal, state, setState }) {
     const addUserHandler = async (values) => {
 
         try {
-
             const res = await fetch(`https://62891163abc3b5e327cc086b.endapi.io/users`, {
                 method: "POST", body: JSON.stringify(values),
                 headers: { 'Content-Type': 'application/json', 'charset': 'utf-8' }
@@ -16,11 +15,10 @@ function ModalHandler({ closeModal, state, setState }) {
 
             const data = await res.json();
             dispatch(addUser(data.data))
-
-            setState(prevState => ({
+            setState({
                 name: "", day: "", month: "", year: "", email: "", role: "user", title: "", field: "", age: "",
                 workExperience: "lessoneyear", userPassword: ""
-            }));
+            });
             closeModal();
         } catch (error) { console.log(error) }
     }
@@ -48,7 +46,6 @@ function ModalHandler({ closeModal, state, setState }) {
     }
 
     return (
-
         <div className="flex p-3">
             <button onClick={submitHandler.bind(null, state)} className="px-3 py-1 mx-1  rounded text-white text-center bg-violet-500 font-bold drop-shadow hover:bg-violet-600 active:bg-violet-700 focus:ring focus:ring-violet-300 ">Add user</button>
             <button onClick={closeModal} className="px-3 py-1 mx-1 rounded text-white text-center bg-red-500 font-bold drop-shadow hover:bg-red-600 active:bg-red-700 focus:ring focus:ring-red-300 ">cancel</button>

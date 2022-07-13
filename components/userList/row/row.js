@@ -1,22 +1,20 @@
 
 import { useState } from 'react'
-import NormalRow from './normalRow';
-import RoleElement from './roleElement';
 import NormalElement from './normalElement';
+import RoleElement from './roleElement';
+import NormalEditedElement from './normalEditedElement';
 import WorkExperienceElement from './workExperienceElement';
 import MembershipDateElement from './membershipDateElement';
-import ButtonElement from './buttonElement';
+import ButtonElement from './buttonElement/buttonElement';
 
-function Row(props) {
-
-    let { UserData, rowNumber,indexRow } = props;
+function Row({ UserData, rowNumber, indexRow }) {
 
     const [state, setState] = useState({
-        edit: false, editedName: UserData.name, editedDay: props.UserData.membershipDate.split("/")[2],
-        editedMonth: props.UserData.membershipDate.split("/")[1], editedYear: props.UserData.membershipDate.split("/")[0],
-        editedEmail: props.UserData.email, editedRole: props.UserData.role, editedTitle: props.UserData.title,
-        editedField: props.UserData.field, editedAge: props.UserData.age, editedWorkExperience: props.UserData.workExperience,
-        editedUserPassword: props.UserData.userPassword,
+        edit: false, editedName: UserData.name, editedDay: UserData.membershipDate.split("/")[2],
+        editedMonth: UserData.membershipDate.split("/")[1], editedYear: UserData.membershipDate.split("/")[0],
+        editedEmail: UserData.email, editedRole: UserData.role, editedTitle: UserData.title,
+        editedField: UserData.field, editedAge: UserData.age, editedWorkExperience: UserData.workExperience,
+        editedUserPassword: UserData.userPassword,
     });
 
     const setValueInput = (name, event) => { setState(prevState => ({ ...prevState, [name]: event.target.value })) }
@@ -28,34 +26,27 @@ function Row(props) {
     return (
         <tr className={`text-gray-600 ${indexRow === rowNumber - 1 ? "" : "border-b border-gray-200 "}`}>
             {
-                Object.keys(UserData).map((element, index) => {
+                //tpes of row items
+                [
+                    { name: "name", id: 1 }, { name: "membershipDate", id: 2 }, { name: "title", id: 3 }, { name: "field", id: 4 },
+                    { name: "age", id: 5 }, { name: "workExperience", id: 6 }, { name: "email", id: 7 }, { name: "role", id: 8 }
 
-                    if (element === "userPassword" || element === "id" || element === "password") return null;
-                    else if (!edit) return (<NormalRow element={element} UserData={UserData} index={index} key={index} />)
-                    else {
-                        if (element === "role") {
-                            return (<RoleElement key={index} editedRole={editedRole} setValueInput={setValueInput} />)
-
-                        } else if (element === "workExperience") {
-                            return (
-                                <WorkExperienceElement key={index} editedWorkExperience={editedWorkExperience} 
-                                setValueInput={setValueInput} />
-                            )
-                        } else if (element === "membershipDate") {
-                            return (
-                                <MembershipDateElement key={index} editedYear={editedYear} editedMonth={editedMonth}
-                                    editedDay={editedDay} setValueInput={setValueInput} />
-                            )
-                        } else {
-                            return (
-                                <NormalElement key={index} element={element} editedTitle={editedTitle}
-                                 editedField={editedField} editedAge={editedAge} editedName={editedName} 
-                                 editedEmail={editedEmail} setValueInput={setValueInput} />
-                            )
-                        }
-                    }
-                })
+                ].map((item, index) => (
+                    !edit ? <NormalElement key={item.id} element={item.name} UserData={UserData} />
+                        : item.name === "role" ?
+                            <RoleElement key={item.id} editedRole={editedRole} setValueInput={setValueInput} />
+                            : item.name === "workExperience" ?
+                                <WorkExperienceElement key={item.id} editedWorkExperience={editedWorkExperience}
+                                    setValueInput={setValueInput} />
+                                : item.name === "membershipDate" ?
+                                    <MembershipDateElement key={item.id} editedYear={editedYear} editedMonth={editedMonth}
+                                        editedDay={editedDay} setValueInput={setValueInput} />
+                                    : <NormalEditedElement key={item.id} element={item.name} editedTitle={editedTitle}
+                                        editedField={editedField} editedAge={editedAge} editedName={editedName}
+                                        editedEmail={editedEmail} setValueInput={setValueInput} />
+                ))
             }
+            {/* buttons for edit and romove and cancel of current row */}
             <ButtonElement edit={edit} setState={setState} state={state} UserData={UserData} />
         </tr>
     )

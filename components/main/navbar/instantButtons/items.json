@@ -1,0 +1,12 @@
+[
+    {
+        "descreption": "صفحه اصلی",
+        "id": 1,
+        "root": "/"
+    },
+    {
+        "descreption": "درباره ما",
+        "id": 2,
+        "root": "/about"
+    }
+]

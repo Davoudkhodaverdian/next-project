@@ -1,0 +1,32 @@
+[
+    {
+        "descreption": "نام و نام خانوادگی",
+        "name": "name",
+        "id": 1
+    },
+    {
+        "descreption": "عنوان شغلی",
+        "name": "title",
+        "id": 2
+    },
+    {
+        "descreption": "رشته تحصیلی",
+        "name": "field",
+        "id": 3
+    },
+    {
+        "descreption": "سن",
+        "name": "age",
+        "id": 4
+    },
+    {
+        "descreption": "ایمیل",
+        "name": "email",
+        "id": 5
+    },
+    {
+        "descreption": "رمز عبور",
+        "name": "userPassword",
+        "id": 6
+    }
+]

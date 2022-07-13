@@ -4,7 +4,7 @@ import AccountLayout from "./accountLayout";
 
 function Information() {
     const currentUser = useSelector(state => state.currentUser.currentUser);
-    console.log(currentUser);
+    
     return (
         <AccountLayout>
             <div>نام: {currentUser.name}</div>

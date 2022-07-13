@@ -3,7 +3,7 @@ function MembershipDateElement({ editedYear, editedMonth,editedDay,setValueInput
 
 
     return (
-        <td className="membership-date flex px-2">
+        <td className="flex px-2 justify-center items-center">
             <input type="text" id={"year"} name={"year"} placeholder={"سال"} value={editedYear}
              className="outline-none w-full max-w-[56px] border border-slate-400 rounded-md px-1" 
                 onChange={setValueInput.bind(this, "editedYear")}

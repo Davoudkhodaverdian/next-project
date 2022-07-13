@@ -4,7 +4,8 @@ import Row from "./row/row";
 
 const Table = () => {
 
-    const user = useSelector((state) => state.user.list)
+    const user = useSelector((state) => state.user.list);
+    
     return (
         <div className="shadow border border-slate-200 rounded-lg  text-center overflow-auto w-full sm:w-full md:w-[560px] lg:w-auto max-h-80 ">
             <div className="table-part">
@@ -23,7 +24,7 @@ const Table = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {user.map((item, index) => (<Row key={index} UserData={item} indexRow={index} rowNumber={user.length} />))}
+                        {user.map((item, index) => (<Row key={item.id} UserData={item} indexRow={index} rowNumber={user.length} />))}
                     </tbody>
                 </table>
                 {user.length === 0 ? <p className='text-center'>there is no user</p> : null}

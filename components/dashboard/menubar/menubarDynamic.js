@@ -1,6 +1,3 @@
-
-
-
 import MenubarItems from './menubarItems';
 
 function Menubar({ sidebar, sendSidebarState }) {
