@@ -1,11 +1,10 @@
 import ModalBody from "./modalBody/modalBody";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setShow } from "../../../store/slices/modalSlice";
 
-function Modal() {
+function Modal({show}) {
 
     const dispatch = useDispatch()
-    const show = useSelector(state => state.showModal.show);
     //close modal handler
     const closeHandler = () => { dispatch(setShow(false)) }
 

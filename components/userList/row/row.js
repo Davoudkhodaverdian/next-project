@@ -23,15 +23,16 @@ function Row({ UserData, rowNumber, indexRow }) {
         editedAge, editedWorkExperience
     } = state;
 
+    let rowItems = [
+        { name: "name", id: 1 }, { name: "membershipDate", id: 2 }, { name: "title", id: 3 }, { name: "field", id: 4 },
+        { name: "age", id: 5 }, { name: "workExperience", id: 6 }, { name: "email", id: 7 }, { name: "role", id: 8 }
+    ]
+
     return (
         <tr className={`text-gray-600 ${indexRow === rowNumber - 1 ? "" : "border-b border-gray-200 "}`}>
             {
                 //tpes of row items
-                [
-                    { name: "name", id: 1 }, { name: "membershipDate", id: 2 }, { name: "title", id: 3 }, { name: "field", id: 4 },
-                    { name: "age", id: 5 }, { name: "workExperience", id: 6 }, { name: "email", id: 7 }, { name: "role", id: 8 }
-
-                ].map((item, index) => (
+                rowItems.map((item) => (
                     !edit ? <NormalElement key={item.id} element={item.name} UserData={UserData} />
                         : item.name === "role" ?
                             <RoleElement key={item.id} editedRole={editedRole} setValueInput={setValueInput} />
@@ -50,7 +51,6 @@ function Row({ UserData, rowNumber, indexRow }) {
             <ButtonElement edit={edit} setState={setState} state={state} UserData={UserData} />
         </tr>
     )
-
 }
 
 export default Row;

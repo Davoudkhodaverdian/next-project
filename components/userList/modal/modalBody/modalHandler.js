@@ -1,5 +1,7 @@
-import { addUser } from '../../../../store/slices/userListSlice';
 import { useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
+
+import { addUser } from '../../../../store/slices/userListSlice';
 
 function ModalHandler({ closeModal, state, setState }) {
 
@@ -20,6 +22,7 @@ function ModalHandler({ closeModal, state, setState }) {
                 workExperience: "lessoneyear", userPassword: ""
             });
             closeModal();
+            toast(<div className='vazir-matn-font'>کاربر اضافه شد</div>);
         } catch (error) { console.log(error) }
     }
 
