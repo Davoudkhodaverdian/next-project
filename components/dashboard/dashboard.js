@@ -2,7 +2,7 @@
 
 
 import Header from './header';
-import { memo, useState } from 'react';
+import { useState } from 'react';
 import MenubarDynamic from './menubar/menubarDynamic'
 import Modal from './../userList/modal/modal'
 import { useSelector } from "react-redux";
@@ -27,4 +27,4 @@ function Dashbord({ children }) {
     );
 }
 
-export default memo(Dashbord);
+export default Dashbord;

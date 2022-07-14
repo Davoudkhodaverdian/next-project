@@ -6,10 +6,9 @@ import { memo } from "react";
 function DashboardLayout({ children }) {
 
     return (
-        <div >
+        <div>
             <Dashbord>
                 {children}
-                <div className='text-center'>Footer</div>
                 <ToastContainer />
             </Dashbord>
         </div>

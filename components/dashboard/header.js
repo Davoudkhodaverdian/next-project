@@ -2,7 +2,7 @@
 
 import AvatarItems from '../account/avatarItems';
 import { useSelector } from 'react-redux';
-import { memo } from 'react';
+
 
 function Header({ sendSidebarState, sidebar }) {
 
@@ -27,4 +27,4 @@ function Header({ sendSidebarState, sidebar }) {
     )
 }
 
-export default memo(Header);
+export default Header;

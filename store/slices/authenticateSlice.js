@@ -4,10 +4,6 @@ const authenticateSlice = createSlice({
     name: 'authenticate',
     initialState: {
         authenticate: false,
-        register: false,
-        login: false,
-        logout: false,
-
     },
     reducers: {
 

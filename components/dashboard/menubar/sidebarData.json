@@ -24,9 +24,15 @@
         "root": "/dashboard/managementPanel"
     },
     {
+        "descreption": "پروژه todo list",
+        "name": "todolist",
+        "id": 5,
+        "root": "/dashboard/todoList"
+    },
+    {
         "descreption": "مقالات",
         "name": "article",
-        "id": 5,
+        "id": 6,
         "root": "/dashboard/article"
     }
 ]

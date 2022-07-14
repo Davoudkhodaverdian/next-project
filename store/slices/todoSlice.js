@@ -10,10 +10,10 @@ const todoSlice = createSlice({
       state.list = payload;
     }, 
     addTodo: (state, action) => {
+      debugger
       state.list.push(action.payload)
     },
     removeTodo: (state, action) => {
-
       state.list = state.list.filter(item => item.id !== action.payload)
     },
     toggleDoneTodo: (state, action) => {
