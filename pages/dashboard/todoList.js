@@ -1,7 +1,7 @@
 
 
 import TodoList from '../../components/todoList/todoList';
-
+import PropTypes from 'prop-types';
 import { setTodo } from "../../store/slices/todoSlice";
 import { useDispatch } from 'react-redux';
 
@@ -22,3 +22,8 @@ export async function getServerSideProps() {
     // Pass data to the page via props
     return { props: { list } }
 }
+
+
+TodoListPage.propTypes = {
+    list: PropTypes.object,
+};

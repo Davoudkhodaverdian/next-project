@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 
 function NormalElement({ element, UserData }) {
 
@@ -13,9 +14,15 @@ function NormalElement({ element, UserData }) {
                     </td> :
                     <td className="py-2 px-4 mx-2">
                         <div className="max-w-[120px] overflow-hidden overflow-ellipsis">{elem}</div>
-                    </td>}
+                    </td>
+            }
         </>
     )
 }
 
 export default NormalElement
+
+NormalElement.propTypes = {
+    element: PropTypes.string,
+    UserData: PropTypes.object
+};

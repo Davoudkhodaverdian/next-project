@@ -1,4 +1,5 @@
 import Items from './items.json'
+import PropTypes from 'prop-types';
 
 function NormalInput({ setValueInput }) {
 
@@ -21,3 +22,7 @@ function NormalInput({ setValueInput }) {
 }
 
 export default NormalInput
+
+NormalInput.propTypes = {
+    setValueInput: PropTypes.func
+};

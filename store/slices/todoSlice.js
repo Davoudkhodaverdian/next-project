@@ -10,7 +10,6 @@ const todoSlice = createSlice({
       state.list = payload;
     }, 
     addTodo: (state, action) => {
-      debugger
       state.list.push(action.payload)
     },
     removeTodo: (state, action) => {

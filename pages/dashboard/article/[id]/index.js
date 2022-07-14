@@ -1,5 +1,6 @@
 import Head from "next/head"
 import Header from "./header"
+import PropTypes from 'prop-types';
 
 const SingleArticle = ({ posts }) => {
 
@@ -41,3 +42,8 @@ export async function getServerSideProps({ params }) {
 }
 
 export default SingleArticle;
+
+SingleArticle.propTypes = {
+  posts: PropTypes.object,
+
+};

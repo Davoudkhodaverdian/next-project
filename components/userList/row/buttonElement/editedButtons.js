@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
-
+import PropTypes from 'prop-types';
 import { setCurrentUser } from '../../../../store/slices/currentUserSlice';
 import { editUser } from '../../../../store/slices/userListSlice';
 import Loading from '../../../loading/loading';
@@ -72,3 +72,11 @@ function EditedButtons({ UserData, setState, state }) {
 }
 
 export default EditedButtons;
+
+
+EditedButtons.propTypes = {
+    setState: PropTypes.func,
+    UserData: PropTypes.object,
+    state: PropTypes.object,
+};
+

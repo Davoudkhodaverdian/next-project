@@ -1,5 +1,7 @@
 
-function NormalElement({ element, editedTitle, editedField,editedAge,editedName,editedEmail,setValueInput }) {
+import PropTypes from 'prop-types';
+
+function NormalEditedElement({ element, editedTitle, editedField, editedAge, editedName, editedEmail, setValueInput }) {
 
     let text = element === "title" ? "عنوان شغلی" :
         element === "field" ? "رشته تحصیلی" : element === "age" ? "سن" : element === "name" ? "نام" : "ایمیل";
@@ -9,7 +11,7 @@ function NormalElement({ element, editedTitle, editedField,editedAge,editedName,
     return (
         <td className="px-2">
             {
-                <input type="text"  className="outline-none w-full border border-slate-400 rounded-md px-1"  id={element} name={element} 
+                <input type="text" className="outline-none w-full border border-slate-400 rounded-md px-1" id={element} name={element}
                     placeholder={text} value={valueItem}
                     onChange={
                         setValueInput.bind(
@@ -21,4 +23,12 @@ function NormalElement({ element, editedTitle, editedField,editedAge,editedName,
     )
 }
 
-export default NormalElement
+export default NormalEditedElement
+
+NormalEditedElement.propTypes = {
+    element: PropTypes.string, editedTitle: PropTypes.string, editedField: PropTypes.string,
+    editedAge: PropTypes.string, editedName: PropTypes.string, editedEmail: PropTypes.string,
+    setValueInput: PropTypes.func
+
+};
+

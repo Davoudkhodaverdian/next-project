@@ -2,6 +2,7 @@
 import FieldData from './fieldData.json'
 import Link from 'next/link';
 import Loading from '../Loading/loading';
+import PropTypes from 'prop-types';
 
 function Form({ type, confirmHandler, setValueInput, loading }) {
 
@@ -49,3 +50,10 @@ function Form({ type, confirmHandler, setValueInput, loading }) {
 }
 
 export default Form
+
+Form.propTypes = {
+    type: PropTypes.string,
+    confirmHandler: PropTypes.func,
+    setValueInput: PropTypes.func,
+    loading: PropTypes.bool
+};

@@ -20,7 +20,7 @@ function AddTodo() {
                     headers: { 'Content-Type': 'application/json', 'charset': 'utf-8 ' }
                 });
                 const data = await res.json();
-                debugger
+                
                 dispatch(addTodo(data.data))
                 toast(<div className='vazir-matn-font'>مورد نظر اضافه شد todo</div>)
                 setInputTodo("");

@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types';
 function NormalRow({ editedRole ,setValueInput}) {
 
 
@@ -16,3 +16,8 @@ function NormalRow({ editedRole ,setValueInput}) {
 }
 
 export default NormalRow
+
+NormalRow.propTypes = {
+    setValueInput: PropTypes.func,
+    editedRole: PropTypes.string
+};

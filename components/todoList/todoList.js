@@ -4,9 +4,6 @@ import AddTodo from './addTodo';
 import { useSelector } from 'react-redux'
 import TodoItem from './todoItem';
 
-import { setTodo } from "../../store/slices/todoSlice";
-import { useDispatch } from 'react-redux';
-
 import DashboardLayout from "../dashboard/dashboardLayout";
 
 function TodoList() {

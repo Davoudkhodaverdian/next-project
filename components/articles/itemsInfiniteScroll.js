@@ -1,5 +1,6 @@
 
 import Link from 'next/dist/client/link'
+import PropTypes from 'prop-types';
 
 export default function ItemsInfiniteScroll({item}) {
 
@@ -23,3 +24,8 @@ export default function ItemsInfiniteScroll({item}) {
     </Link>
     )
 }
+
+
+ItemsInfiniteScroll.propTypes = {
+    item: PropTypes.object
+};

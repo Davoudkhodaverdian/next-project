@@ -1,5 +1,6 @@
 import { memo } from 'react';
 import MenubarItems from './menubarItems';
+import PropTypes from 'prop-types';
 
 function Menubar({ sidebar, sendSidebarState }) {
 
@@ -25,3 +26,8 @@ function Menubar({ sidebar, sendSidebarState }) {
 }
 
 export default memo(Menubar);
+
+Menubar.propTypes = {
+    sidebar: PropTypes.bool,
+    sendSidebarState: PropTypes.func
+};

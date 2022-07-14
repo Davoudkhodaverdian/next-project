@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 
 function DateInput({ setValueInput, year, month, day }) {
 
@@ -17,3 +18,8 @@ function DateInput({ setValueInput, year, month, day }) {
 }
 
 export default DateInput
+
+DateInput.propTypes = {
+    setValueInput: PropTypes.func,
+    year: PropTypes.string, month: PropTypes.string, day: PropTypes.string
+};

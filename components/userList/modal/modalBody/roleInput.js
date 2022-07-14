@@ -1,4 +1,6 @@
 
+ import PropTypes from 'prop-types';
+
 
 function RoleInput({ Role, setValueInput }) {
 
@@ -14,3 +16,9 @@ function RoleInput({ Role, setValueInput }) {
 }
 
 export default RoleInput
+
+
+RoleInput.propTypes = {
+    setValueInput: PropTypes.func,
+    Role: PropTypes.string,
+};

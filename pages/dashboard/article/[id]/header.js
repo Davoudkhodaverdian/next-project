@@ -1,7 +1,8 @@
 
 import Link from "next/link"
 
-export default function Header() {
+
+export default function ArticleHeader() {
 
     return (
         <Link href='/dashboard/article/'>
@@ -16,3 +17,4 @@ export default function Header() {
         </Link>
     )
 }
+

@@ -2,9 +2,9 @@
 
 import AvatarItems from '../account/avatarItems';
 import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 
-
-function Header({ sendSidebarState, sidebar }) {
+function DasboardHeader({ sendSidebarState, sidebar }) {
 
     const currentUser = useSelector((state) => state.currentUser.currentUser);
     const showSidebar = (event) => {
@@ -27,4 +27,10 @@ function Header({ sendSidebarState, sidebar }) {
     )
 }
 
-export default Header;
+export default DasboardHeader;
+
+
+DasboardHeader.propTypes = {
+    sidebar: PropTypes.bool,
+    sendSidebarState: PropTypes.func
+};

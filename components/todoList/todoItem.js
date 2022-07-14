@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import NarmalItem from './normalItem';
 import EditedItem from './editedItem';
+import PropTypes from 'prop-types';
 
 function TodoItem({ data }) {
 
@@ -27,3 +28,7 @@ function TodoItem({ data }) {
 }
 
 export default TodoItem;
+
+TodoItem.propTypes = {
+    data: PropTypes.object,
+};

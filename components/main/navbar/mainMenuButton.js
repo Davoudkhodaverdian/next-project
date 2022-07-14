@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 
 function MainMenuButton({ MenuHandle }) {
 
@@ -13,3 +14,8 @@ function MainMenuButton({ MenuHandle }) {
 }
 
 export default MainMenuButton;
+
+
+MainMenuButton.propTypes = {
+    MenuHandle: PropTypes.func
+};

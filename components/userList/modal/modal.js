@@ -1,6 +1,7 @@
 import ModalBody from "./modalBody/modalBody";
 import { useDispatch } from "react-redux";
 import { setShow } from "../../../store/slices/modalSlice";
+import PropTypes from 'prop-types';
 
 function Modal({show}) {
 
@@ -29,3 +30,7 @@ function Modal({show}) {
 }
 
 export default Modal;
+
+Modal.propTypes = {
+    show: PropTypes.bool
+};

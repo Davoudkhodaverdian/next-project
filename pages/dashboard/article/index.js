@@ -1,7 +1,7 @@
 
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
-
+import PropTypes from 'prop-types';
 import LoadingPage from '../../../components/loading/loadingPage';
 
 const Article = dynamic(() => import("../../../components/articles"), { suspense: true });
@@ -25,5 +25,9 @@ export async function getServerSideProps() {
     // Pass data to the page via props
     return { props: { posts } }
 }
+
+ArticlePage.propTypes = {
+    posts: PropTypes.array,
+};
 
 

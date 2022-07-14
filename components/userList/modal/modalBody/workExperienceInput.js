@@ -1,4 +1,6 @@
 
+import PropTypes from 'prop-types';
+
 function WorkExperienceInput({ workExperience, setValueInput }) {
 
     return (
@@ -15,3 +17,10 @@ function WorkExperienceInput({ workExperience, setValueInput }) {
 }
 
 export default WorkExperienceInput
+
+WorkExperienceInput.propTypes = {
+    setValueInput: PropTypes.func,
+    workExperience: PropTypes.string,
+};
+
+

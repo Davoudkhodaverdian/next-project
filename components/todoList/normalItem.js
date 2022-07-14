@@ -2,6 +2,7 @@
 import { useDispatch } from 'react-redux';
 import { toast } from "react-toastify";
 import { removeTodo, toggleDoneTodo } from "../../store/slices/todoSlice"
+import PropTypes from 'prop-types';
 
 function NarmalItem({ data, setEditItemHandler }) {
 
@@ -56,3 +57,8 @@ function NarmalItem({ data, setEditItemHandler }) {
 }
 
 export default NarmalItem;
+
+NarmalItem.propTypes = {
+    data: PropTypes.object,
+    setEditItemHandler: PropTypes.func
+};

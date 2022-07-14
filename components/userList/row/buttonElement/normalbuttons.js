@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import { removeUser } from '../../../../store/slices/userListSlice';
 import { setCurrentUser } from '../../../../store/slices/currentUserSlice';
 import { setAuthenticate } from '../../../../store/slices/authenticateSlice';
-
+import PropTypes from 'prop-types';
 import { useRouter } from 'next/dist/client/router';
 
 function Normalbuttons({ UserData, setState }) {
@@ -43,3 +43,8 @@ function Normalbuttons({ UserData, setState }) {
 }
 
 export default Normalbuttons;
+Normalbuttons.propTypes = {
+    setState: PropTypes.func,
+    UserData: PropTypes.object
+};
+

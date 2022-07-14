@@ -1,6 +1,7 @@
 import { editTodo } from "../../store/slices/todoSlice"
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 function TodoItem({ data, setEditItemHandler }) {
 
@@ -36,3 +37,9 @@ function TodoItem({ data, setEditItemHandler }) {
 }
 
 export default TodoItem;
+
+
+TodoItem.propTypes = {
+    data: PropTypes.object,
+    setEditItemHandler: PropTypes.func
+};

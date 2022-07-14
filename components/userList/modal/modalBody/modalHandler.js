@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 
 import { addUser } from '../../../../store/slices/userListSlice';
+import PropTypes from 'prop-types';
 
 function ModalHandler({ closeModal, state, setState }) {
 
@@ -57,3 +58,10 @@ function ModalHandler({ closeModal, state, setState }) {
 }
 
 export default ModalHandler
+
+ModalHandler.propTypes = {
+    closeModal: PropTypes.func,
+    setState: PropTypes.func,
+    state: PropTypes.object
+};
+

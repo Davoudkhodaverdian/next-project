@@ -2,7 +2,7 @@
 
 import { useDispatch } from 'react-redux';
 import { setUser } from "../../store/slices/userListSlice";
-
+import PropTypes from 'prop-types';
 import LoadingPage from '../../components/loading/loadingPage';
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
@@ -32,4 +32,6 @@ export async function getServerSideProps() {
     return { props: { users } }
 }
 
-
+ManagementPanelPage.prototype = {
+    users: PropTypes.object
+}

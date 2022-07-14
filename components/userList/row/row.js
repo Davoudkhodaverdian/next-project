@@ -6,6 +6,7 @@ import NormalEditedElement from './normalEditedElement';
 import WorkExperienceElement from './workExperienceElement';
 import MembershipDateElement from './membershipDateElement';
 import ButtonElement from './buttonElement/buttonElement';
+import PropTypes from 'prop-types';
 
 function Row({ UserData, rowNumber, indexRow }) {
 
@@ -62,3 +63,9 @@ function Row({ UserData, rowNumber, indexRow }) {
 }
 
 export default Row;
+
+Row.propTypes = {
+    UserData: PropTypes.object,
+    rowNumber: PropTypes.number,
+    indexRow: PropTypes.number
+};

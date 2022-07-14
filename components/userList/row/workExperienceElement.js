@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types';
 function WorkExperienceElement({ editedWorkExperience,setValueInput }) {
 
     return (
@@ -14,3 +15,8 @@ function WorkExperienceElement({ editedWorkExperience,setValueInput }) {
 }
 
 export default WorkExperienceElement
+
+WorkExperienceElement.propTypes = {
+    editedWorkExperience: PropTypes.string,
+    setValueInput: PropTypes.func
+};

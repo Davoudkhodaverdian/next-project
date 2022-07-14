@@ -6,6 +6,7 @@ import ModalHandler from './modalHandler';
 import NormalInput from './normalInput/normalInput'
 import RoleInput from './roleInput';
 import WorkExperienceInput from './workExperienceInput';
+import PropTypes from 'prop-types';
 
 function ModalBody({ closeModal }) {
 
@@ -31,3 +32,7 @@ function ModalBody({ closeModal }) {
 }
 
 export default ModalBody;
+
+ModalBody.propTypes = {
+    closeModal: PropTypes.func
+};
