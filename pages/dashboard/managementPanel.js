@@ -2,10 +2,12 @@
 
 import { useDispatch } from 'react-redux';
 import { setUser } from "../../store/slices/userListSlice";
-import React, { Suspense } from "react";
-import LoadingPage from '../../components/loading/loadingPage';
 
-const ManagementPanel = React.lazy(() => import("../../components/managementPanel/managementPanel.js"));
+import LoadingPage from '../../components/loading/loadingPage';
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
+
+const ManagementPanel = dynamic(() => import("../../components/managementPanel/managementPanel.js"), { suspense: true });
 
 export default function ManagementPanelPage({ users }) {
 
@@ -18,14 +20,11 @@ export default function ManagementPanelPage({ users }) {
         </Suspense>
     )
 }
+
 // This gets called on every request
 export async function getServerSideProps() {
+
     // Fetch data from external API
-    setTimeout(() => {
-
-
-
-    }, 3000)
     const res = await fetch(`https://62891163abc3b5e327cc086b.endapi.io/users`)
     const users = await res.json()
 

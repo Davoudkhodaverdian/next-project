@@ -1,5 +1,5 @@
 import Main from './../components/main/main';
-import { ToastContainer } from 'react-toastify';
+
 
 const Home = () => {
 
@@ -7,7 +7,6 @@ const Home = () => {
   return (
     <div>
       <Main />
-      <ToastContainer />
     </div>
   )
 

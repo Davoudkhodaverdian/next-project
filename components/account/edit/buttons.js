@@ -35,7 +35,7 @@ export default function ButtonsEditAccount({ setEdit, edit, dataChanged }) {
             const responseData = data.data;
             dispatch(setCurrentUser(responseData))
             setEdit(false)
-            toast(<div className='vazir-matn-font'>ویرایش انجام شد</div>,()=>{alert("toastify تمام شد" )});
+            toast(<div className='vazir-matn-font'>ویرایش انجام شد</div>);
 
         } catch (error) { console.log(error) }
     }

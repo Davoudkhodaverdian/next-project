@@ -14,7 +14,6 @@ function Information() {
                 currentUser.workExperience === "lessoneyear" ? "کمتر ازیک سال" :
                     currentUser.workExperience === "betweenoneandtwoyear" ? "بین یک تا دو سال" : "بیشتر از دو سال"
             }</div>
-
         </AccountLayout>
     );
 
