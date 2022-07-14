@@ -1,10 +1,14 @@
 
+import { useState } from "react";
+
 import { useSelector } from "react-redux";
-import { setCurrentUser } from '../../../store/slices/currentUserSlice';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
+
+import { setCurrentUser } from '../../../store/slices/currentUserSlice';
 import Loading from "../../Loading/loading";
-import { useState } from "react";
+import PropTypes from 'prop-types';
+
 
 export default function ButtonsEditAccount({ setEdit, edit, dataChanged }) {
 
@@ -53,4 +57,10 @@ export default function ButtonsEditAccount({ setEdit, edit, dataChanged }) {
             }
         </div>
     )
-} 
+}
+
+ButtonsEditAccount.propTypes = {
+    setEdit: PropTypes.func,
+    edit: PropTypes.bool,
+    dataChanged: PropTypes.object
+};

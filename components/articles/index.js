@@ -1,13 +1,13 @@
 
 
 import { useState } from "react";
+import PropTypes from 'prop-types';
 
 import InfiniteScroll from "react-infinite-scroll-component";
 
 import DashboardLayout from '../../components/dashboard/dashboardLayout'
 import LoaderInfiniteScroll from './loaderInfiniteScroll';
 import ItemsInfiniteScroll from './itemsInfiniteScroll';
-
 
 export default function Article({ posts }) {
 
@@ -51,3 +51,8 @@ export default function Article({ posts }) {
 
 
 }
+
+
+Article.propTypes = {
+    posts: PropTypes.array,
+};
