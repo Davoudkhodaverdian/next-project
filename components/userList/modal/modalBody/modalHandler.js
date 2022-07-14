@@ -50,8 +50,8 @@ function ModalHandler({ closeModal, state, setState }) {
 
     return (
         <div className="flex p-3">
-            <button onClick={submitHandler.bind(null, state)} className="px-3 py-1 mx-1  rounded text-white text-center bg-violet-500 font-bold drop-shadow hover:bg-violet-600 active:bg-violet-700 focus:ring focus:ring-violet-300 ">Add user</button>
             <button onClick={closeModal} className="px-3 py-1 mx-1 rounded text-white text-center bg-red-500 font-bold drop-shadow hover:bg-red-600 active:bg-red-700 focus:ring focus:ring-red-300 ">cancel</button>
+            <button onClick={submitHandler.bind(null, state)} className="px-3 py-1 mx-1  rounded text-white text-center bg-violet-500 font-bold drop-shadow hover:bg-violet-600 active:bg-violet-700 focus:ring focus:ring-violet-300 ">Add user</button>
         </div>
     )
 }
