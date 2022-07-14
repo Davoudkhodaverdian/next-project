@@ -2,7 +2,7 @@
 import FieldData from './fieldData.json'
 import Link from 'next/link';
 
-function Form({ type, confirmHandler, setValueInput }) {
+function Form({ type, confirmHandler, setValueInput,loading }) {
 
     return (
         <form className=" p-2">

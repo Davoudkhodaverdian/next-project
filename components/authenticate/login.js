@@ -13,8 +13,10 @@ function Login() {
     const dispatch = useDispatch();
     const setValueInput = (name, event) => { setState(prevState => ({ ...prevState, [name]: event.target.value })) }
     const router = useRouter()
+    const [loading, setLoading] = useState(false);
 
     const checkInputs = async () => {
+        setLoading(true)
         try {
             const res = await fetch(`https://62891163abc3b5e327cc086b.endapi.io/users`)
             const data = await res.json();
@@ -25,11 +27,13 @@ function Login() {
                 dispatch(setAuthenticate(true));
                 dispatch(setCurrentUser(userFinded));
                 toast(<div className='vazir-matn-font'>شما با موفقیت وارد شدید</div>)
+                setLoading(false)
                 router.push("/");
             } else alert("چنین کاربری وجود ندارد")
+            
 
         } catch (error) { console.log(error) }
-
+        setLoading(false)
     }
 
     const enterHandler = (event) => {
@@ -45,7 +49,7 @@ function Login() {
         <div className="flex flex-col justify-center items-center h-screen">
             <div className="flex flex-col max-w-[500px] rounded shadow-lg p-4 bg-white w-[calc(100%-16px)] mx-2 lg:w-1/2">
                 <h2 className="mt-6 text-3xl font-extrabold text-gray-900 text-right">ورود</h2>
-                <Form type="login" confirmHandler={enterHandler} setValueInput={setValueInput} />
+                <Form type="login" confirmHandler={enterHandler} setValueInput={setValueInput} loading={loading} />
                 <Link href="/register"><a><div>قبلا ثبت نام نکرده اید</div></a></Link>
             </div>
         </div>

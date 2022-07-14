@@ -14,15 +14,15 @@ function Register() {
     const dispatch = useDispatch();
     const setValueInput = (name, event) => { setState(prevState => ({ ...prevState, [name]: event.target.value })) }
     const router = useRouter();
-    
+    const [loading, setLoading] = useState(false);
     const checkInputs = async () => {
-
         let key = Date.now();
         let values = {
             name:state.name, membershipDate: "1401/4/28", title: "-", field: "-", age: "0000",
             workExperience: "lessoneyear", email:state.email, role: "user", userPassword: state.password, password: key.toString()
         }
-
+        
+        setLoading(true)
         try {
             const res = await fetch(`https://62891163abc3b5e327cc086b.endapi.io/users`, {
                 method: "POST",
@@ -34,11 +34,12 @@ function Register() {
             dispatch(addUser(data.data))
             dispatch(setAuthenticate(true));
             dispatch(setCurrentUser(data.data));
-            toast(<div className='vazir-matn-font'>شما با موفقیت ثبت نام کردید</div>)
+            setLoading(false);
+            toast(<div className='vazir-matn-font'>شما با موفقیت ثبت نام کردید</div>);
             router.push("/");
 
         } catch (error) { console.log(error) }
-
+        setLoading(false);
     }
 
     const registerHandler = (event) => {
@@ -54,7 +55,7 @@ function Register() {
         <div className="flex flex-col justify-center items-center h-screen">
             <div className="flex flex-col max-w-[500px] rounded shadow-lg p-4 bg-white w-[calc(100%-16px)] mx-2 lg:w-1/2">
                 <h2 className="mt-6 text-3xl font-extrabold text-gray-900 text-right">ثبت نام</h2>
-                <Form type="register" confirmHandler={registerHandler} setValueInput={setValueInput} />
+                <Form type="register" confirmHandler={registerHandler} setValueInput={setValueInput} loading={loading} />
                 <Link href="/login"><a><div>قبلا ثبت نام کرده اید</div></a></Link>
             </div>
         </div>
