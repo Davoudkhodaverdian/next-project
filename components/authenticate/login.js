@@ -29,7 +29,10 @@ function Login() {
                 toast(<div className='vazir-matn-font'>شما با موفقیت وارد شدید</div>)
                 setLoading(false)
                 router.push("/");
-            } else alert("چنین کاربری وجود ندارد")
+            } else {
+                setLoading(false)
+                alert("چنین کاربری وجود ندارد")
+            }
             
 
         } catch (error) { console.log(error) }

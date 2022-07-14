@@ -1,8 +1,9 @@
 
 import FieldData from './fieldData.json'
 import Link from 'next/link';
+import Loading from '../Loading/loading';
 
-function Form({ type, confirmHandler, setValueInput,loading }) {
+function Form({ type, confirmHandler, setValueInput, loading }) {
 
     return (
         <form className=" p-2">
@@ -26,8 +27,20 @@ function Form({ type, confirmHandler, setValueInput,loading }) {
                 </Link>
                 <Link href="/">
                     <a>
-                        <input onClick={confirmHandler}
-                            type="submit" name="submit" value={type === "register" ? "ثبت نام" : "ورود"} className="px-3 rounded text-white text-center bg-violet-500 font-bold drop-shadow hover:bg-violet-600 active:bg-violet-700 focus:ring focus:ring-violet-300  mx-1" />
+
+                        <button className="px-3 rounded text-white text-center bg-violet-500 font-bold drop-shadow hover:bg-violet-600 active:bg-violet-700 focus:ring focus:ring-violet-300  mx-1"
+                            onClick={confirmHandler} type="submit" name="submit"
+                        >
+                            <div className='flex'>
+                                <div>
+                                    {type === "register" ? "ثبت نام" : "ورود"}
+                                </div>
+                                <div>
+                                    {loading ? <Loading /> : ""}
+                                </div>
+                            </div>
+                        </button>
+
                     </a>
                 </Link>
             </div>
