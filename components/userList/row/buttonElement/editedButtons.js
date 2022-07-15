@@ -57,8 +57,7 @@ function EditedButtons({ UserData, setState, state }) {
         <div className='flex'>
             <div>
                 {
-                    loading ?
-                       <Loading/> :
+                    loading ? <Loading/> :
                         <button type="button" className="btn btn-sm btn-primary btn-custom mx-2 text-indigo-600"
                             onClick={EditChangeMethod.bind(this, UserData.id)}>Edited</button>
                 }
@@ -72,7 +71,6 @@ function EditedButtons({ UserData, setState, state }) {
 }
 
 export default EditedButtons;
-
 
 EditedButtons.propTypes = {
     setState: PropTypes.func,

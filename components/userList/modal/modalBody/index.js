@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import DateInput from './dateInput'
 import ModalHandler from './modalHandler';
-import NormalInput from './normalInput/normalInput'
+import NormalInput from './normalInput'
 import RoleInput from './roleInput';
 import WorkExperienceInput from './workExperienceInput';
 import PropTypes from 'prop-types';

@@ -48,10 +48,7 @@ export default function Article({ posts }) {
             </div>
         </DashboardLayout>
     )
-
-
 }
-
 
 Article.propTypes = {
     posts: PropTypes.array,

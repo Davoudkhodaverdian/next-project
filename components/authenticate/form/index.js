@@ -1,8 +1,8 @@
 
 import FieldData from './fieldData.json'
 import Link from 'next/link';
-import Loading from '../Loading/loading';
 import PropTypes from 'prop-types';
+import ConfirmButton from './confirmButton';
 
 function Form({ type, confirmHandler, setValueInput, loading }) {
 
@@ -26,24 +26,7 @@ function Form({ type, confirmHandler, setValueInput, loading }) {
                         <input type="submit" name="submit" value="بازگشت" className="px-3 rounded text-white text-center bg-red-500 font-bold drop-shadow hover:bg-red-600 active:bg-red-700 focus:ring focus:ring-red-300 mx-1" />
                     </a>
                 </Link>
-                <Link href="/">
-                    <a>
-
-                        <button className="px-3 rounded text-white text-center bg-violet-500 font-bold drop-shadow hover:bg-violet-600 active:bg-violet-700 focus:ring focus:ring-violet-300  mx-1"
-                            onClick={confirmHandler} type="submit" name="submit"
-                        >
-                            <div className='flex'>
-                                <div>
-                                    {type === "register" ? "ثبت نام" : "ورود"}
-                                </div>
-                                <div>
-                                    {loading ? <Loading /> : ""}
-                                </div>
-                            </div>
-                        </button>
-
-                    </a>
-                </Link>
+                <ConfirmButton confirmHandler={confirmHandler} loading={loading} type={type} />
             </div>
         </form>
     )

@@ -1,4 +1,4 @@
-import ModalBody from "./modalBody/modalBody";
+import ModalBody from "./modalBody";
 import { useDispatch } from "react-redux";
 import { setShow } from "../../../store/slices/modalSlice";
 import PropTypes from 'prop-types';

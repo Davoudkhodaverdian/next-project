@@ -1,6 +1,4 @@
 
-
-
 import EditedButtons from './editedButtons';
 import NormalButtons from './normalbuttons';
 import PropTypes from 'prop-types';

@@ -1,31 +1,12 @@
-import { useDispatch } from 'react-redux';
-import { toast } from 'react-toastify';
 
-import { addUser } from '../../../../store/slices/userListSlice';
+
 import PropTypes from 'prop-types';
+import useAddUserHandler from './useAddUserHandler';
 
 function ModalHandler({ closeModal, state, setState }) {
 
-    const dispatch = useDispatch();
-
-    const addUserHandler = async (values) => {
-
-        try {
-            const res = await fetch(`https://62891163abc3b5e327cc086b.endapi.io/users`, {
-                method: "POST", body: JSON.stringify(values),
-                headers: { 'Content-Type': 'application/json', 'charset': 'utf-8' }
-            })
-
-            const data = await res.json();
-            dispatch(addUser(data.data))
-            setState({
-                name: "", day: "", month: "", year: "", email: "", role: "user", title: "", field: "", age: "",
-                workExperience: "lessoneyear", userPassword: ""
-            });
-            closeModal();
-            toast(<div className='vazir-matn-font'>کاربر اضافه شد</div>);
-        } catch (error) { console.log(error) }
-    }
+    // addUserHandler as hook
+    const { addUserHandler } = useAddUserHandler({ closeModal, setState });
 
     const submitHandler = (receivedValues, event) => {
 

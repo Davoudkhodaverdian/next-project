@@ -15,6 +15,7 @@ export default function ButtonsEditAccount({ setEdit, edit, dataChanged }) {
     const currentUser = useSelector(state => state.currentUser.currentUser);
     const dispatch = useDispatch();
     const [loading, setLoading] = useState(false);
+    
     const confirmEditHandler = async () => {
 
         //some user data is changed
