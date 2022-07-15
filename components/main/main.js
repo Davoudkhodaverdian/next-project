@@ -1,5 +1,4 @@
 
-import { ToastContainer } from 'react-toastify';
 
 import BasicLayout from "./basicLayout";
 
@@ -10,7 +9,6 @@ function Main() {
       <div className="text-center my-3">
         صفحه اصلی
       </div>
-      <ToastContainer />
     </BasicLayout>
   );
 }

@@ -2,8 +2,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
-import { ToastContainer } from 'react-toastify';
-
 import AccountLayout from "../accountLayout";
 import ButtonsEditAccount from "./buttons";
 import EditInputItems from "./editInputItems.json"
@@ -41,7 +39,6 @@ function EditAccount() {
                     </div>
                 ))}
             </form>
-            <ToastContainer />
         </AccountLayout>
     );
 }
