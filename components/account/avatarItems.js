@@ -2,14 +2,16 @@ import { setAuthenticate } from "../../store/slices/authenticateSlice"
 import { useDispatch } from 'react-redux'
 import Link from "next/link";
 import { toast } from 'react-toastify';
-
+import observable from "../patterns/observable";
 function AccountItems() {
 
     const dispatch = useDispatch()
     const authenticateHandler = () => {
         //logout
-        dispatch(setAuthenticate(false))
-        toast(<div className='vazir-matn-font'>شما از سایت خارج شدید</div>)
+        dispatch(setAuthenticate(false));
+
+        let toastLogout= ()=>{toast(<div className='vazir-matn-font'>شما از سایت خارج شدید</div>);};
+        observable.subscribe(toastLogout);
     }
 
     return (

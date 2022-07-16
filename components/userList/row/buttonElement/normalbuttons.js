@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
-
+import observable from '../../../patterns/observable';
 import { removeUser } from '../../../../store/slices/userListSlice';
 import { setCurrentUser } from '../../../../store/slices/currentUserSlice';
 import { setAuthenticate } from '../../../../store/slices/authenticateSlice';
@@ -25,7 +25,11 @@ function Normalbuttons({ UserData, setState }) {
             if (currentUser.id === id) {
                 dispatch(setCurrentUser({}));
                 dispatch(setAuthenticate(false));
-                // toast(<div className='vazir-matn-font'>شما از لیست کاربران حذف شدید، از سایت خارج میشوید</div>);
+               
+                let toastLogoutAndRemove= ()=>{
+                    toast(<div className='vazir-matn-font'>شما از لیست کاربران حذف شدید، از سایت خارج میشوید</div>);
+                };
+                observable.subscribe(toastLogoutAndRemove);
                 router.push("/");
             } else {
                 dispatch(removeUser(id));

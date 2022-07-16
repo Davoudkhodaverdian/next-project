@@ -2,7 +2,13 @@
 
 import BasicLayout from "./basicLayout";
 
+import observable from "../patterns/observable";
+
+
 function Main() {
+
+  observable.notify()
+  observable.unsubscribeAll();
 
   return (
     <BasicLayout>

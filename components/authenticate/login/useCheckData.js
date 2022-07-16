@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
 import { useState } from 'react';
 
+import observable from '../../patterns/observable';
 import { setAuthenticate } from "../../../store/slices/authenticateSlice"
 import { setCurrentUser } from "../../../store/slices/currentUserSlice"
 
@@ -24,8 +25,10 @@ export default function useCheckData(state) {
             if (userFinded) {
                 dispatch(setAuthenticate(true));
                 dispatch(setCurrentUser(userFinded));
-                toast(<div className='vazir-matn-font'>شما با موفقیت وارد شدید</div>)
-                setLoading(false)
+                setLoading(false);
+
+                let toastLogin = ()=>{toast(<div className='vazir-matn-font'>شما با موفقیت وارد شدید</div>);};
+                observable.subscribe(toastLogin);
                 router.push("/");
             } else {
                 setLoading(false)

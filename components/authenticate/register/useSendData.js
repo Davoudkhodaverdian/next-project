@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux'
 import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
 import { useState } from 'react';
-
+import observable from '../../patterns/observable';
 import { setAuthenticate } from "../../../store/slices/authenticateSlice"
 import { setCurrentUser } from "../../../store/slices/currentUserSlice"
 import { addUser } from '../../../store/slices/userListSlice';
@@ -32,7 +32,8 @@ export default function useSendData(state) {
             dispatch(setAuthenticate(true));
             dispatch(setCurrentUser(data.data));
             setLoading(false);
-            toast(<div className='vazir-matn-font'>شما با موفقیت ثبت نام کردید</div>);
+            let toastRegister = () => { toast(<div className='vazir-matn-font'>شما با موفقیت ثبت نام کردید</div>) };
+            observable.subscribe(toastRegister);
             router.push("/");
     
         } catch (error) { console.log(error) }
