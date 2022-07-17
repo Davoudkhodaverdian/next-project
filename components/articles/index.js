@@ -11,12 +11,12 @@ import ItemsInfiniteScroll from './itemsInfiniteScroll';
 
 export default function Article({ posts }) {
 
-    const [state, setState] = useState(posts.slice(0, 10));
-    const [hasMore, setHasMore] = useState(true);
+    const [state, setState] = useState(posts.length > 10 ? posts.slice(0, 10) : posts);
+    const [hasMore, setHasMore] = useState(posts.length > 10);
 
     const fetchMoreData = () => {
 
-        if (state.length >= 100) {
+        if (state.length >= posts.length) {
             setHasMore(false);
             return;
         }

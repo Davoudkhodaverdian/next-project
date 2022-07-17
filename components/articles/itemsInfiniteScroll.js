@@ -2,6 +2,7 @@
 import Link from 'next/dist/client/link'
 import PropTypes from 'prop-types';
 
+
 export default function ItemsInfiniteScroll({ item }) {
 
     return (
