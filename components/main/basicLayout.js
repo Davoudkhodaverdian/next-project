@@ -1,5 +1,5 @@
 
-import Navbar from "./navbar/navbar";
+import Navbar from "./navbar";
 
 function BasicLayout({children}) {
 
@@ -7,7 +7,7 @@ function BasicLayout({children}) {
         <div>
             <Navbar/>
             {children}
-            <div className='text-center'>Footer</div>
+            
           
         </div>
     );

@@ -17,7 +17,10 @@ function Navbar() {
     return (
         <nav className=' p-3 bg-gray-100 shadow'>
             <div className='flex flex-wrap justify-between items-center container mx-auto'>
-                <div className='flex  items-center'><img src="/images/logo.svg" width={50} alt="logo" /></div>
+                <div className='flex'>
+                    <div className='flex  items-center'><img src="/images/logo.svg" width={50} alt="logo" /></div>
+                    <div className='flex  items-center'><img src="/images/nextLogo.svg" width={50} alt="logo" /></div>
+                </div>
                 <MainMenuButton MenuHandle={MenuHandle} />
                 <div
                     className={
