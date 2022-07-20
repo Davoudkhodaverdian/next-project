@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-
+import Theme from '../../theme'
 import Instantbuttons from './instantButtons/instantbuttons';
 import AuthenticateButtons from './authenticateButtons';
 import MainButtons from './mainButtons';
@@ -15,12 +15,14 @@ function Navbar() {
     const authenticate = useSelector((state) => state.authenticate.authenticate);
 
     return (
-        <nav className=' p-3 bg-gray-100 shadow'>
+        <nav className=' p-3 bg-gray-100 dark:bg-slate-700 shadow dark:text-white'>
             <div className='flex flex-wrap justify-between items-center container mx-auto'>
                 <div className='flex'>
                     <div className='flex  items-center'><img src="/images/logo.svg" width={50} alt="logo" /></div>
                     <div className='flex  items-center'><img src="/images/nextLogo.svg" width={50} alt="logo" /></div>
+                    
                 </div>
+
                 <MainMenuButton MenuHandle={MenuHandle} />
                 <div
                     className={
@@ -28,6 +30,7 @@ function Navbar() {
                         md:space-x-4 md:space-x-reverse space-y-4 md:space-y-0 mt-2 md:mt-0 md:items-center`
                     }
                 >
+                    <Theme />
                     <Instantbuttons />
                     {authenticate ? <MainButtons /> : <AuthenticateButtons />}
                 </div>

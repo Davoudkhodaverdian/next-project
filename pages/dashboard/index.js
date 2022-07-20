@@ -1,4 +1,4 @@
-import Dashboard from "../../components/dashboard/dashboard";
+import Dashboard from "../../components/dashboard";
 import { useSelector } from 'react-redux';
 import { useRouter } from "next/router";
 

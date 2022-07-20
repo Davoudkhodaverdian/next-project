@@ -5,6 +5,7 @@ import currentUserSlice from './slices/currentUserSlice'
 import counterSlice from './slices/counterSlice'
 import authenticateSlice from './slices/authenticateSlice'
 import modalSlice from './slices/modalSlice'
+import themeSlice from './slices/themeSlice'
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
   authenticate: authenticateSlice,
   currentUser: currentUserSlice,
   showModal: modalSlice,
+  theme: themeSlice,
 })
 
 //without persist
@@ -26,7 +28,7 @@ const rootReducer = combineReducers({
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ["authenticate","currentUser"] // only this item will be persisted
+  whitelist: ["authenticate","currentUser","theme"] // only this item will be persisted
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

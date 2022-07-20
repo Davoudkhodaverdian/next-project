@@ -8,4 +8,9 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  //add manual theme mode dark , light
+  darkMode: 'class',
+
 }
+
+ 

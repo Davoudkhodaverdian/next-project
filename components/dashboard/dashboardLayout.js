@@ -1,11 +1,11 @@
 
-import Dashbord from "./dashboard";
+import Dashbord from "./index";
 import { memo } from "react";
 
 function DashboardLayout({ children }) {
 
     return (
-        <div>
+        <div >
             <Dashbord>
                 {children}
             </Dashbord>
